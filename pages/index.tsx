@@ -16,7 +16,7 @@ export default function Home({
         <ul key={id}>
           <li >
             <Link href={`recipes/${id}`}>
-              <a>{title}</a>
+              <a>{title}！！！</a>
             </Link>
           </li>
         </ul>
