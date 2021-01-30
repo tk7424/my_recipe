@@ -52,10 +52,13 @@ export default function Home({
             margin: 10px 0 0;
             width: 45vw;
             border: solid 1px #000;
+            border-radius: 10px;
+            background-color: #fff;
           }
           img {
             width: 45vw;
             height: 28vw;
+            border-radius: 10px 10px 0 0;
           }
           h3 {
             font-size: 0.9rem;
