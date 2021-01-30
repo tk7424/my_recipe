@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import Layout from '../parts/MyLayout';
 
 export default function RecipeId({ 
   recipes 
@@ -11,16 +12,28 @@ export default function RecipeId({
     }
   }) {
     return (
-        <main>
+      <>
+        <div id="single">
+          <Layout>
             <h1>{recipes.title}</h1>
-            <p>{recipes.description}</p>
-            <p>{recipes.publishedAt}</p>
             <div
-             dangerouslySetInnerHTML={{
-                 __html: `${recipes.body}`,
-             }} 
+            dangerouslySetInnerHTML={{
+              __html: `${recipes.body}`,
+            }} 
             />
-        </main>
+            <p>{recipes.publishedAt}</p>
+          </Layout>
+        </div>
+        <style jsx>{`
+          h1 {
+            font-size: 2rem;
+          }
+          div {
+            position: relative;
+            z-index: -1;
+          }
+          `}</style>
+      </>
     );
 }
 

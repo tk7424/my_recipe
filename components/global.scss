@@ -1,12 +1,15 @@
 body{
-    margin: 0 auto;
+    margin: 60px auto 0;
     background-color: #fffdf3;
 }
 
 
 // header //
 Header{
+    position: fixed;
+    width: 100vw;
     height: 60px;
+    top: 0;
     background-color: #ffae46;
     padding: 0 0 0 3vw;
 
@@ -21,7 +24,7 @@ Header{
     .burger_menu {
         position: absolute;
         top: 15px;
-        right: 5vw;
+        right: 8vw;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -132,6 +135,18 @@ Header{
 
 // footer //
 Footer{
-    height: 100px;
-    background-color: #999;
+    height: 40px;
+    background-color: #555;
+    margin: 50px 0 0 0;
+}
+
+// singleページ動画 //
+#single {
+    iframe {
+        width: 100vw;
+        height: 56.3vw; 
+        position: -webkit-sticky; // Safari用
+        position:sticky;
+        top: 60px;
+    }
 }

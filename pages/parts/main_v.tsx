@@ -8,16 +8,20 @@ const Main_V = () => {
             <style jsx>{`
             .main_v {
                 width: 100vw;
-                height: 180px;
+                height: 160px;
                 object-fit: cover;
                 position: absolute;
+                z-index: -1;
             }
             div {
                 height: 160px;
                 position: relative;
             }
             h1 {
-                padding: 110px 5vw 0 0;
+                z-index: -1;
+                position: relative;
+                padding: 112px 5vw 0 0;
+                margin: 0;
                 text-align: right;
                 font-size: 2rem;
                 font-family: serif;

@@ -11,6 +11,7 @@ export default function Home({
       id: any
       title: string
       image: any
+      description: string
     }[]
   }) {
   return (
@@ -18,23 +19,56 @@ export default function Home({
       <Layout>
       <Main_V />
       <NewMovie />
-      {recipes.map(({ id, title, image }) => (
-        <ul key={id}>
-          <li>
-            <div>
-              {image ? (
-                  <img src={image.url + "?w=210&h=140"} alt="" />
-              ) : (
-                  <div />
+      <div className="contents">
+        {recipes.map(({ id, title, image, description }) => (
+          <Link href={`recipes/${id}`}>
+          <ul key={id}>
+            <li>
+              <div>
+                {image ? (
+                    <img src={image.url} alt="" />
+                ) : (
+                    <div />
                 )}
-            </div>
-            <Link href={`recipes/${id}`}>
-              <a>{title}</a>
-            </Link>
-          </li>
-        </ul>
-      ))}
+              </div>
+              <h3>{title}</h3>
+                <p>{description}</p>
+            </li>
+          </ul>
+          </Link>
+        ))}
+      </div>
       </Layout>
+      <style jsx>{`
+          .contents {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 3vw;
+          }
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+            width: 45vw;
+            border: solid 1px #000;
+          }
+          img {
+            width: 45vw;
+            height: 28vw;
+          }
+          h3 {
+            font-size: 0.9rem;
+            margin: 0;
+            text-align: center;
+          }
+          p {
+            font-size: 0.8rem;
+            padding: 0 1vw;
+            margin: 5px 0;
+            color: #666;
+          }
+          `}</style>
     </>
   );
 };
