@@ -1,11 +1,19 @@
+import React, { useState } from 'react';
 import Link from "next/link";
+import Burger from "./menu/Burger";
+import Nav from "./menu/Nav"
 
-const Header = () => (
+export const Header = () => {
+  const [open, setOpen] = useState(false);
+  return (
     <header>
       <Link href="/">
-        <a>Home</a>
+        <a>Cuisine idee konkon</a>
       </Link>
+      <Burger open={open} setOpen={setOpen} />
+      <Nav open={open} setOpen={setOpen} />
     </header>
   );
+};
 
   export default Header;

@@ -1,7 +1,8 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import Header from './parts/header';
-import Footer from './parts/footer';
+import Layout from './parts/MyLayout'
+import Main_V from "./parts/main_v";
+import NewMovie from './parts/new_movie';
 
 export default function Home({ 
   recipes
@@ -13,8 +14,10 @@ export default function Home({
     }[]
   }) {
   return (
-    <div id="main">
-      <Header />
+    <>
+      <Layout>
+      <Main_V />
+      <NewMovie />
       {recipes.map(({ id, title, image }) => (
         <ul key={id}>
           <li>
@@ -31,17 +34,17 @@ export default function Home({
           </li>
         </ul>
       ))}
-      <Footer />
-    </div>
+      </Layout>
+    </>
   );
-}
+};
 
 // データをテンプレートに受け渡す部分の処理を記述
 export const getStaticProps: GetStaticProps = async () => {
   const key: any = {
     headers: {'X-API-KEY': process.env.API_KEY},
   };
-  const data = await fetch('https://konkonrecipes.microcms.io/api/v1/recipes?limit=4', key)
+  const data = await fetch('https://konkonrecipes.microcms.io/api/v1/recipes?', key)
     .then(res => res.json())
     .catch(() => null);
   return {
