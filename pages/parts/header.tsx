@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <header>
       <Link href="/">
-        <a>Cuisine idee konkon</a>
+        <img src="/title_logo.png" alt="タイトルロゴ"/>
       </Link>
       <Burger open={open} setOpen={setOpen} />
       <Nav open={open} setOpen={setOpen} />

@@ -21,23 +21,25 @@ export default function RecipeId({
               __html: `${recipes.body}`,
             }} 
             />
-            <p>{recipes.publishedAt}</p>
           </Layout>
         </div>
         <style jsx>{`
           h1 {
-            font-size: 2rem;
+            font-size: 1.4rem;
+            padding: 10px 0;
+            margin: 0;
+            text-align: center;
           }
           div {
             position: relative;
-            z-index: -1;
+            z-index: 0;
           }
           `}</style>
       </>
     );
 }
 
-
+// 静的生成のためのパスを指定します
 export const getStaticPaths: GetStaticPaths = async () => {
     const key: any = {
       headers: {'X-API-KEY': process.env.API_KEY},

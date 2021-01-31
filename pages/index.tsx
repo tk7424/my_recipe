@@ -51,9 +51,13 @@ export default function Home({
             padding: 0;
             margin: 10px 0 0;
             width: 45vw;
-            border: solid 1px #000;
+            border: solid 1px #c3c3c3;
             border-radius: 10px;
             background-color: #fff;
+            box-shadow: 1px 1px 10px #afafaf;
+          }
+          ul:active {
+            background-color: #c3c3c3;
           }
           img {
             width: 45vw;

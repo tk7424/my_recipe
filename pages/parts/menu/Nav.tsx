@@ -1,18 +1,18 @@
 import React from 'react';
+// import Category from './Category';
 
 type Props = {
     open: boolean;
     setOpen: Function;
   };
   
-export const Nav: React.FC<Props> = ({
-    open,
-}) => {  
+export const Nav: React.FC<Props> = ({open}) => {  
     return (
         <nav className="nav_menu" aria-expanded={open}>
             <ul>
-                <li><a href="">HOME</a></li>
-                <li><a href="">HOME</a></li>
+                {/* <li><Category /></li> */}
+                {/* <li><a href="">{recipes.category.category}</a></li> */}
+                {/* <li><a href="">{recipes.title}</a></li> */}
                 <li><a href="">HOME</a></li>
                 <li><a href="">HOME</a></li>
           </ul>

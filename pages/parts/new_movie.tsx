@@ -13,10 +13,11 @@ const NewMovie = () => {
             div iframe {
                 width: 80vw;
                 height: 45vw;
-                border: none;
+                border: solid 5px #cacaca;
             }
             h2 {
                 font-family: "apple Chancery", serif;
+                text-shadow: 0 0 0 #000;
                 text-align: center;
                 margin: 0;
             }
