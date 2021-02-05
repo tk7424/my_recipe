@@ -108,14 +108,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const data = await fetch('https://konkonrecipes.microcms.io/api/v1/recipes?', key)
     .then(res => res.json())
     .catch(() => null);
-  const data2 = await fetch('https://konkonrecipes.microcms.io/api/v1/recipes?', key)
-    .then(res => res.json())
-    .catch(() => null);
 
   return {
     props: {
       recipes: data.contents,
-      category: data2.contents
     }
   };
 };
