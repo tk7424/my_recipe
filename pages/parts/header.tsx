@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from "next/link";
-import Burger from "./menu/Burger";
-import Nav from "./menu/Nav"
+import {Burger} from "./menu/Burger";
+import {Nav} from "./menu/Nav"
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
@@ -15,5 +15,3 @@ export const Header = () => {
     </header>
   );
 };
-
-  export default Header;

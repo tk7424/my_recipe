@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Layout from '../parts/MyLayout';
+import Link from 'next/link';
 
 export default function RecipeId({ 
   recipes 
@@ -9,6 +10,7 @@ export default function RecipeId({
       description: string
       publishedAt: number
       body: string
+      category: any
     }
   }) {
     return (
@@ -21,6 +23,9 @@ export default function RecipeId({
               __html: `${recipes.body}`,
             }} 
             />
+            <Link as={`/category/${recipes.category.category}`} href="/category/">
+            <h3>{recipes.category.category}一覧</h3>
+            </Link>
           </Layout>
         </div>
         <style jsx>{`
@@ -34,12 +39,25 @@ export default function RecipeId({
             position: relative;
             z-index: 0;
           }
+          h3 {
+            width: 80vw;
+            padding: 10px 0;
+            margin: 20px 10vw;
+            text-align: center;
+            background-color: #af855a;
+            border-radius: 23px;
+            display: inline-block;
+            color: #fff;
+          }
+          h3:active {
+            background-color: #c3c3c3;
+          }
           `}</style>
       </>
     );
 }
 
-// 静的生成のためのパスを指定します
+// 静的生成のためのパスを指定
 export const getStaticPaths: GetStaticPaths = async () => {
     const key: any = {
       headers: {'X-API-KEY': process.env.API_KEY},
@@ -51,7 +69,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     return {paths, fallback: false};
   };
   
-  // データをテンプレートに受け渡す部分の処理を記述します
+  // データをテンプレートに受け渡す部分の処理を記述
   export const getStaticProps: GetStaticProps = async (context: any) => {
     const id = context.params.id;
     const key: any = {

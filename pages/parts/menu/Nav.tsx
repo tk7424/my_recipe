@@ -1,5 +1,5 @@
 import React from 'react';
-// import Category from './Category';
+import Category from './Category';
 
 type Props = {
     open: boolean;
@@ -9,15 +9,10 @@ type Props = {
 export const Nav: React.FC<Props> = ({open}) => {  
     return (
         <nav className="nav_menu" aria-expanded={open}>
+            <h4>カテゴリー一覧</h4>
             <ul>
-                {/* <li><Category /></li> */}
-                {/* <li><a href="">{recipes.category.category}</a></li> */}
-                {/* <li><a href="">{recipes.title}</a></li> */}
-                <li><a href="">HOME</a></li>
-                <li><a href="">HOME</a></li>
-          </ul>
+                <Category />
+            </ul>
         </nav>
     );
 };
-
-export default Nav;

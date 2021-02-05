@@ -115,15 +115,25 @@ Header{
             position: fixed;
             z-index: 9;
         }
+        h4 {
+            font-weight: normal;
+            font-size: 0.8rem;
+            color: #a0a0a0;
+            margin: 0 0 0 20px;
+        }
         ul {
             text-align: left;
 
             li {
-                margin: 10px 0;
+                margin: 20px 0;
                 list-style: none;
+                border-bottom: solid 1px #383838;
+                &:active {
+                    background-color: #c3c3c3;
+                }
                 a {
-                    font-size: 1.2rem;
-                    color: #000;
+                    font-size: 1rem;
+                    color: #383838;
                     text-decoration: none;
                 }
             }
@@ -162,7 +172,18 @@ Footer{
         background-color: #fff;
         padding: 2vw 3vw;
         width: 90vw;
-        margin: 0 2vw;
+        margin: 0 1.5vw;
         box-shadow: 1px 1px 10px #3e3e3e;
+
+        code {
+            width: 90vw;
+        }
     }
 }
+
+// カテゴリー色分け //
+._APPETIZER {background-color: #c7f3b0;}
+._MAIN {background-color: #f1a25f;}
+._DESERT {background-color: #f797c8;}
+._1DISH {background-color: #ffde67;}
+._ALONEFOOD {background-color: #a7a3a2;}
