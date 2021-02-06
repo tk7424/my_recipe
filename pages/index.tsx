@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import Layout from './parts/MyLayout'
-import {Main_V} from "./parts/main_v";
+import Main_V from "./parts/main_v";
 import NewMovie from './parts/new_movie';
 
 export default function Home({recipes}: {recipes: {

@@ -5,7 +5,7 @@ type Props = {
   setOpen: Function;
 };
 
-export const Burger: React.FC<Props> = ({
+const Burger: React.FC<Props> = ({
   open,
   setOpen,
 }) =>  {
@@ -18,3 +18,5 @@ export const Burger: React.FC<Props> = ({
     </>
   );
 };
+
+export default Burger

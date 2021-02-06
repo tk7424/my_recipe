@@ -1,4 +1,4 @@
-export const Main_V = () => {
+const Main_V = () => {
     return (
         <>
             <img src="/main_v.png" className="main_v" />
@@ -40,3 +40,5 @@ export const Main_V = () => {
         </>
     );
 };
+
+export default Main_V

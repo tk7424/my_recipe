@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer>
       <Link href="/">
@@ -9,3 +9,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer

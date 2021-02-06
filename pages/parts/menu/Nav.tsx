@@ -6,7 +6,7 @@ type Props = {
     setOpen: Function;
   };
   
-export const Nav: React.FC<Props> = ({open}) => {  
+const Nav: React.FC<Props> = ({open}) => {  
     return (
         <nav className="nav_menu" aria-expanded={open}>
             <h4>カテゴリー一覧</h4>
@@ -16,3 +16,5 @@ export const Nav: React.FC<Props> = ({open}) => {
         </nav>
     );
 };
+
+export default Nav
