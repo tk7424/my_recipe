@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Layout from './parts/MyLayout'
 import Main_V from "./parts/main_v";
 import NewMovie from './parts/new_movie';
+import CategorySort from './parts/category_sort';
 
 export default function Home({recipes}: {recipes: {
       id: any
@@ -17,10 +18,11 @@ export default function Home({recipes}: {recipes: {
       <Layout>
       <Main_V />
       <NewMovie />
+      <CategorySort />
       <div className="contents">
         {recipes.map(({ id, title, image, description, category }) => (
           <>
-            <ul key={id}>
+            <ul key={id} className={`sort_${category.category} ${"content"}`}>
               <Link href={`category/${category.category}`}><h4 className={`_${category.category}`}>{category.category}</h4></Link>
               <Link href={`recipes/${id}`}>
                   <li>
@@ -66,7 +68,7 @@ export default function Home({recipes}: {recipes: {
             text-shadow: 1px 1px 1px #947d7d;
             font-family: "apple Chancery", serif;
             position: absolute;
-            transform: translateX(23vw);
+            transform: translate(23.3vw, -0.1vw);
             width: 22vw;
           }
           h4:active {

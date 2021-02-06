@@ -6,12 +6,12 @@ type Props = {
     setOpen: Function;
   };
   
-const Nav: React.FC<Props> = ({open}) => {  
+const Nav: React.FC<Props> = ({open, setOpen}) => {  
     return (
         <nav className="nav_menu" aria-expanded={open}>
             <h4>カテゴリー一覧</h4>
             <ul>
-                <Category />
+                <Category open={open} setOpen={setOpen} />
             </ul>
         </nav>
     );

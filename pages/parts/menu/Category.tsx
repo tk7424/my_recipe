@@ -1,14 +1,21 @@
 import Link from "next/link";
+type Props = {
+  open: boolean;
+  setOpen: Function;
+};
 
-export default function Category() {
+const Category: React.FC<Props> = ({
+  open,
+  setOpen,
+}) => {
 return (
         <>
           {/* 後から動的に変更したい */}
-          <Link as="/category/APPETIZER" href="/APPETIZER"><li><a>前菜</a></li></Link>
-          <Link as="/category/MAIN" href="/MAIN"><li><a>メイン料理</a></li></Link>
-          <Link as="/category/DESERT" href="/DESERT"><li><a>デザート</a></li></Link>
-          <Link as="/category/1DISH" href="/1DISH"><li><a>1品料理</a></li></Link>
-          <Link as="/category/ALONEFOOD" href="/ALONEFOOD"><li><a>一人暮らし飯</a></li></Link>
+          <Link href="/category/APPETIZER"><li aria-expanded={open} onClick={() => setOpen(!open)}><a>前菜</a></li></Link>
+          <Link href="/category/MAIN"><li aria-expanded={open} onClick={() => setOpen(!open)}><a>メイン料理</a></li></Link>
+          <Link href="/category/DESERT"><li aria-expanded={open} onClick={() => setOpen(!open)}><a>デザート</a></li></Link>
+          <Link href="/category/1DISH"><li aria-expanded={open} onClick={() => setOpen(!open)}><a>1品料理</a></li></Link>
+          <Link href="/category/ALONEFOOD"><li aria-expanded={open} onClick={() => setOpen(!open)}><a>一人暮らし飯</a></li></Link>
           <style jsx>{`
           li {
             font-size: 0.9rem;
@@ -16,6 +23,8 @@ return (
           `}</style>
         </>
 )}
+
+export default Category
 
 /* 動的にする際の処理 */
 // export const getStaticProps: GetStaticProps = async () => {

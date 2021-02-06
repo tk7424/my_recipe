@@ -23,8 +23,8 @@ export default function RecipeId({
               __html: `${recipes.body}`,
             }} 
             />
-            <Link as={`/category/${recipes.category.category}`} href="/category/">
-            <h3>{recipes.category.category}一覧</h3>
+            <Link href={`/category/${recipes.category.category}`}>
+          <h3 className={`_${recipes.category.category}`}>{recipes.category.category}一覧</h3>
             </Link>
           </Layout>
         </div>
@@ -44,7 +44,7 @@ export default function RecipeId({
             padding: 10px 0;
             margin: 20px 10vw;
             text-align: center;
-            background-color: #af855a;
+            text-shadow: 1px 1px 1px #947d7d;
             border-radius: 23px;
             display: inline-block;
             color: #fff;

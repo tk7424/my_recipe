@@ -22,30 +22,31 @@ export default function Home({
     <>
       <Layout>
         <h2>
-          {url.asPath ==(baseurl+"MAIN") ? "メイン料理"  : "" }
-          {url.asPath ==(baseurl+"APPETIZER") ? "前菜"  : "" }
-          {url.asPath ==(baseurl+"1DISH") ? "1品料理"  : "" }
-          {url.asPath ==(baseurl+"DESERT") ? "デザート"  : "" }
-          {url.asPath ==(baseurl+"ALONEFOOD") ? "一人暮らし飯"  : "" }
+          {url.asPath == (baseurl+"MAIN") ? "メイン料理"  : "" }
+          {url.asPath == (baseurl+"APPETIZER") ? "前菜"  : "" }
+          {url.asPath == (baseurl+"1DISH") ? "1品料理"  : "" }
+          {url.asPath == (baseurl+"DESERT") ? "デザート"  : "" }
+          {url.asPath == (baseurl+"ALONEFOOD") ? "一人暮らし飯"  : "" }
         </h2>
         <div className="contents">
           {recipes.map(({ id, title, image, description, category }) => (
             <>
-            <Link as={`/recipes/${id}`} href="/recipes/">
               <ul key={id} style={{display: baseurl+category.category == url.asPath ? "" : "none"}}>
-                <li>
-                  <div >
-                    {image ? (
-                        <img src={image.url} alt="" />
-                    ) : (
-                        <div />
-                    )}
-                  </div>
-                  <h3>{title}</h3>
-                    <p>{description}</p>
-                </li>
+                <Link href={`/category/${category.category}`}><h4 className={`_${category.category}`}>{category.category}</h4></Link>
+                <Link href={`/recipes/${id}`}>
+                  <li>
+                    <div >
+                      {image ? (
+                          <img src={image.url} alt="" />
+                      ) : (
+                          <div />
+                      )}
+                    </div>
+                    <h3>{title}</h3>
+                      <p>{description}</p>
+                  </li>
+                </Link>
               </ul>
-            </Link>
             </>
           ))}
         </div>
@@ -63,17 +64,36 @@ export default function Home({
             justify-content: space-between;
             margin: 0 3vw;
           }
+          h4 {
+            margin: 0;
+            border-radius: 0 10px 0 10px;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 1px #947d7d;
+            font-family: "apple Chancery", serif;
+            position: absolute;
+            transform: translate(23.3vw, -0.1vw);
+            width: 22vw;
+          }
+          h4:active {
+            background-color: #c3c3c3;
+          }
           ul {
             list-style: none;
             padding: 0;
             margin: 10px 0 0;
             width: 45vw;
+            height: 220px;
             border: solid 1px #c3c3c3;
             border-radius: 10px;
             background-color: #fff;
             box-shadow: 1px 1px 10px #afafaf;
           }
-          ul:active {
+          li {
+            height: 220px;
+            border-radius: 10px;
+          }
+          li:active {
             background-color: #c3c3c3;
           }
           img {
