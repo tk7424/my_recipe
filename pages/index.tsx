@@ -74,6 +74,7 @@ export default function Home({recipes}: {recipes: {
           h4:active {
             background-color: #c3c3c3;
           }
+          h4:hover{cursor: pointer;}
           li {
             height: 220px;
             border-radius: 10px;
@@ -81,6 +82,7 @@ export default function Home({recipes}: {recipes: {
           li:active {
             background-color: #c3c3c3;
           }
+          li:hover{cursor: pointer;}
           img {
             width: 45vw;
             height: 28vw;
@@ -96,6 +98,28 @@ export default function Home({recipes}: {recipes: {
             padding: 0 1vw;
             margin: 5px 0;
             color: #666;
+          }
+          @media screen and (min-width:800px) {
+            .contents {
+              margin: 0 15vw;
+              justify-content: flex-start;
+            }
+            ul {
+              width: 15vw;
+              height: 250px;
+              margin: 10px 1vw 20px;
+            }
+            h4 {
+              width: 8vw;
+              transform: translate(7.05vw,-0.1vw);
+            }
+            li {
+              height: 250px;
+            }
+            img {
+              width: 15vw;
+              height: 10vw;
+            }
           }
           `}</style>
     </>

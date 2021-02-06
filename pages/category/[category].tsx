@@ -112,6 +112,34 @@ export default function Home({
             margin: 5px 0;
             color: #666;
           }
+          @media screen and (min-width:800px) {
+            h2 {
+              margin: 110px 0 20px 0;
+              font-size: 2rem;
+            }
+            .contents {
+              margin: 0 15vw;
+              justify-content: flex-start;
+            }
+            ul {
+              width: 15vw;
+              height: 250px;
+              margin: 10px 1vw 20px;
+            }
+            h4 {
+              width: 8vw;
+              transform: translate(7.05vw,-0.1vw);
+            }
+            h4:hover{cursor: pointer;}
+            li {
+              height: 250px;
+            }
+            li:hover{cursor: pointer;}
+            img {
+              width: 15vw;
+              height: 10vw;
+            }
+          }
           `}</style>
     </>
   );

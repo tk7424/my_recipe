@@ -21,6 +21,15 @@ const NewMovie = () => {
                 text-align: center;
                 margin: 0;
             }
+            @media screen and (min-width:800px) {
+                div iframe {
+                    width: 32vw;
+                    height: 18vw;
+                }
+                h2 {
+                    font-size: 2rem;
+                }
+            }
             `}</style>
         </>
     )

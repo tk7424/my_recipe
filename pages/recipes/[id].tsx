@@ -15,22 +15,24 @@ export default function RecipeId({
   }) {
     return (
       <>
-        <div id="single">
-          <Layout>
+        <Layout>
+          <div id="single">
             <h1>{recipes.title}</h1>
             <div
             dangerouslySetInnerHTML={{
               __html: `${recipes.body}`,
             }} 
             />
-            <Link href="https://www.youtube.com/channel/UCD9rstz787RQXIuk_rPtbJg">
-              <a target="_blank" className="youtube_btn">チャンネル登録</a>
-            </Link>
-            <Link href={`/category/${recipes.category.category}`}>
-              <a className={`_${recipes.category.category}`}>{recipes.category.category}一覧</a>
-            </Link>
-          </Layout>
-        </div>
+            <div className="flex">
+              <Link href="https://www.youtube.com/channel/UCD9rstz787RQXIuk_rPtbJg">
+                <a target="_blank" className="youtube_btn">チャンネル登録</a>
+              </Link>
+              <Link href={`/category/${recipes.category.category}`}>
+                <a className={`_${recipes.category.category}`}>{recipes.category.category}一覧</a>
+              </Link>
+            </div>
+          </div>
+        </Layout>
         <style jsx>{`
           h1 {
             font-size: 1.4rem;
@@ -58,6 +60,19 @@ export default function RecipeId({
           }
           .youtube_btn {
             background-color: #ff6969;
+          }
+          @media screen and (min-width:800px) {
+            h1 {
+              padding: 40px 0 30px;
+              font-size: 2rem;
+            }
+            .flex {
+              display: flex;
+              margin: 30px 0 0;
+            }
+            a {
+              margin: 20px 1vw 0;
+            }
           }
           `}</style>
       </>

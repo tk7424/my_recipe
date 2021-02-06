@@ -28,12 +28,16 @@ const Main_V = () => {
                 color: #fff;
                 text-shadow: 2px 2px 1px #555;
             }
-            @media screen and (min-width:980px) {
+            @media screen and (min-width:800px) {
                 .main_v {
-                height: 400px;
+                height: 300px;
                 }
                 div {
-                    height: 400px;
+                    height: 300px;
+                }
+                h1 {
+                    font-size: 4rem;
+                    padding: 200px 5vw 0 0;
                 }
             }
             `}</style>
