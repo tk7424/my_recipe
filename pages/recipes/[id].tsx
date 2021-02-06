@@ -23,8 +23,11 @@ export default function RecipeId({
               __html: `${recipes.body}`,
             }} 
             />
+            <Link href="https://www.youtube.com/channel/UCD9rstz787RQXIuk_rPtbJg">
+              <a target="_blank" className="youtube_btn">チャンネル登録</a>
+            </Link>
             <Link href={`/category/${recipes.category.category}`}>
-          <h3 className={`_${recipes.category.category}`}>{recipes.category.category}一覧</h3>
+              <a className={`_${recipes.category.category}`}>{recipes.category.category}一覧</a>
             </Link>
           </Layout>
         </div>
@@ -39,18 +42,22 @@ export default function RecipeId({
             position: relative;
             z-index: 0;
           }
-          h3 {
+          a {
             width: 80vw;
             padding: 10px 0;
-            margin: 20px 10vw;
+            margin: 20px 10vw 0;
             text-align: center;
             text-shadow: 1px 1px 1px #947d7d;
             border-radius: 23px;
             display: inline-block;
             color: #fff;
+            text-decoration: none;
           }
-          h3:active {
+          a:active {
             background-color: #c3c3c3;
+          }
+          .youtube_btn {
+            background-color: #ff6969;
           }
           `}</style>
       </>
