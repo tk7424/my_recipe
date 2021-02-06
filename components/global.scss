@@ -143,9 +143,19 @@ Header{
 
 // footer //
 Footer{
-    height: 100px;
-    background-color: #ffae46;
+    height: 40px;
+    background-color: #ffbe69;
     margin: 50px 0 0 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px #947d7d;
+    }
 }
 
 // singleページ動画 //
@@ -153,8 +163,6 @@ Footer{
     iframe {
         width: 100vw;
         height: 56.3vw; 
-        position: -webkit-sticky; // Safari用
-        position:sticky;
         top: 60px;
     }
     p {
