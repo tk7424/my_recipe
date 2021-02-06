@@ -66,7 +66,8 @@ const CategorySort = () => {
                 .categories div {
                     width: calc(100%/5);
                     text-align: center;
-                    padding: 5px 0;
+                    padding: 7px 0px;
+                    font-size: 4.5vw;
                     color: #fff;
                     text-shadow: 1px 1px 1px #947d7d;
                 }
