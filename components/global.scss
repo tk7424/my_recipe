@@ -178,7 +178,7 @@ Footer{
     }
 }
 
-// singleページ動画 //
+// singleページ //
 #single {
     iframe {
         width: 100vw;
@@ -217,6 +217,30 @@ Footer{
             width: 50vw;
             margin: 0 2vw;
         }
+    }
+}
+
+// NEWS詳細ページ  //
+#news {
+    p {
+        font-size: 0.9rem;
+        margin: 0 3vw;
+    }
+    pre {
+        background-color: #ffcf87;;
+        text-align: center;
+
+        code {
+            font-size: 4.3vw;
+            padding: 12px 1vw;
+            display: inline-block;
+            text-shadow: 1px 1px 1px #000;
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+    blockquote {
+        margin: 10px 3vw;
     }
 }
 
