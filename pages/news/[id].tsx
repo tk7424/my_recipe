@@ -39,6 +39,9 @@ export default function News({
           </>
         </Layout>
         <style jsx>{`
+          #news {
+            margin: 0 0 20px;
+          }
           img {
             object-fit: cover;
             width: 100vw;

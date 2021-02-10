@@ -62,6 +62,9 @@ export default function RecipeId({
             position: relative;
             z-index: 0;
           }
+          .flex {
+            margin: 0 0 20px;
+          }
           a {
             width: 80vw;
             padding: 10px 0;
@@ -86,7 +89,7 @@ export default function RecipeId({
             }
             .flex {
               display: flex;
-              margin: 30px 0 0;
+              margin: 30px 0 20px;
             }
             a {
               margin: 20px 1vw 0;
