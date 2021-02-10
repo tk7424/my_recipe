@@ -13,7 +13,7 @@ const head = () => {
             <meta name="twitter:site" content="@konkon7424" />
 
             <script
-            async={true}
+            async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
             />
             <script
