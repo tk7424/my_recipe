@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
+import AdSense from 'react-adsense';
 import Layout from '../parts/MyLayout';
 
 export default function News({ 
@@ -18,18 +19,24 @@ export default function News({
     return (
       <>
         <Layout>
-          <div id="news">
-            {news.map(({ id, title, image, content }) => (
-                <div style={{display: baseurl+id == url.asPath ? "" : "none"}}>
-                  <div>
-                      {image ? (<img src={image.url + "?w=210&h=140"} alt="" />) : (<div />)}
+          <>
+            <div id="news">
+              {news.map(({ id, title, image, content }) => (
+                  <div style={{display: baseurl+id == url.asPath ? "" : "none"}}>
+                    <div>
+                        {image ? (<img src={image.url + "?w=210&h=140"} alt="" />) : (<div />)}
+                    </div>
+                    <h2>{title}</h2>
+                    <div className="border"></div>
+                    <div className="content" dangerouslySetInnerHTML={{__html: `${content}`,}} />
                   </div>
-                  <h2>{title}</h2>
-                  <div className="border"></div>
-                  <div className="content" dangerouslySetInnerHTML={{__html: `${content}`,}} />
-                </div>
-            ))}
-          </div>
+              ))}
+            </div>
+            <AdSense.Google
+              client='ca-pub-7785406076713581'
+              slot=''
+            />
+          </>
         </Layout>
         <style jsx>{`
           img {

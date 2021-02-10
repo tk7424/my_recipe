@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import AdSense from 'react-adsense';
 import Layout from '../parts/MyLayout';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -44,6 +45,10 @@ export default function RecipeId({
                 <a className={`_${recipes.category.category}`}>{recipes.category.category}一覧</a>
               </Link>
             </div>
+            <AdSense.Google
+              client='ca-pub-7785406076713581'
+              slot=''
+            />
           </div>
         </Layout>
         <style jsx>{`

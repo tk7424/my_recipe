@@ -13,3 +13,4 @@ interface Window {
       }
     )
   }
+declare module 'react-adsense';
