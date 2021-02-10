@@ -20,14 +20,14 @@ export default function News({
         <Layout>
           <div id="news">
             {news.map(({ id, title, image, content }) => (
-              <div style={{display: baseurl+id == url.asPath ? "" : "none"}}>
-                <div>
-                    {image ? (<img src={image.url + "?w=210&h=140"} alt="" />) : (<div />)}
+                <div style={{display: baseurl+id == url.asPath ? "" : "none"}}>
+                  <div>
+                      {image ? (<img src={image.url + "?w=210&h=140"} alt="" />) : (<div />)}
+                  </div>
+                  <h2>{title}</h2>
+                  <div className="border"></div>
+                  <div className="content" dangerouslySetInnerHTML={{__html: `${content}`,}} />
                 </div>
-                <h2>{title}</h2>
-                <div className="border"></div>
-                <div className="content" dangerouslySetInnerHTML={{__html: `${content}`,}} />
-              </div>
             ))}
           </div>
         </Layout>

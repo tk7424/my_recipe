@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link'
 import Layout from './parts/MyLayout';
+import Head from 'next/head';
 
 export default function News({ 
   news
@@ -18,20 +19,23 @@ export default function News({
             <h2>NEWS一覧</h2>
             <div className="contents">
               {news.map(({ id, title, image }) => (
-                <ul key={id}>
-                  <Link href={`/news/${id}`}>
-                    <li>
-                        <div>
-                          {image ? (
-                              <img src={image.url + "?w=210&h=140"} alt="" />
-                          ) : (
-                              <div />
-                            )}
-                        </div>
-                        <div className="title"><a>{title}</a></div>
-                    </li>
-                  </Link>
-                </ul>
+                <>
+                  <Head><title>NEWS一覧| cuisine idee konkon 〜コンコンレシピ〜</title></Head>
+                  <ul key={id}>
+                    <Link href={`/news/${id}`}>
+                      <li>
+                          <div>
+                            {image ? (
+                                <img src={image.url + "?w=210&h=140"} alt="" />
+                            ) : (
+                                <div />
+                              )}
+                          </div>
+                          <div className="title"><a>{title}</a></div>
+                      </li>
+                    </Link>
+                  </ul>
+                </>
               ))}
             </div>
           </div>

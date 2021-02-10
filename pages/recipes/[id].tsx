@@ -1,6 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import Layout from '../parts/MyLayout';
 import Link from 'next/link';
+import Head from 'next/head';
+import { useRouter } from "next/router";
 
 export default function RecipeId({ 
   recipes 
@@ -8,14 +10,25 @@ export default function RecipeId({
     recipes: {
       title: string
       description: string
+      image: any
       publishedAt: number
       body: string
       category: any
     }
   }) {
+    const url:any = useRouter();
+    const art_url: any = url.asPath
     return (
       <>
         <Layout>
+        <Head>
+          <title>【レシピ】{recipes.title}| cuisine idee konkon 〜コンコンレシピ〜</title>
+          <meta name="description" content={recipes.description} />
+          <meta property="og:url" content={`https://cuisineidee.com${art_url}`} />
+          <meta property="og:title" content={recipes.title} />
+          <meta property="og:description" content={recipes.description} />
+          <meta property="og:image" content={recipes.image.url} />
+        </Head>
           <div id="single">
             <h1>{recipes.title}</h1>
             <div
