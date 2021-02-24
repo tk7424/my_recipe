@@ -29,7 +29,7 @@ const BottomNav = () => {
                 position: fixed;
                 bottom: 0;
                 width: 100vw;
-                height: 42px;
+                height: 60px;
                 background-color: #fff;
                 text-align: center;
                 border: solid 1px #e2e2e2;
@@ -41,8 +41,8 @@ const BottomNav = () => {
                 background-color: #ffdbae;
             }
             img {
-                height: 20px;
-                width: 20px;
+                height: 30px;
+                width: 30px;
                 margin: 5px 0 0;
             }
             nav {
