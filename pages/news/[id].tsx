@@ -7,7 +7,7 @@ export default function News({
   news
   }: {
     news: {
-      id: any
+      id: number
       title: string
       image: any
       content: any

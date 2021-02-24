@@ -3,44 +3,40 @@ import Link from 'next/link'
 import Layout from './parts/MyLayout';
 import Head from 'next/head';
 
-export default function News({ 
+export default function NewsIndex({
   news
-  }: {
-    news: {
-      id: any
-      title: string
-      image: any
-    }[]
-  }){
-    return (
-      <>
-        <Layout>
-          <div id="news">
-            <h2>NEWS一覧</h2>
-            <div className="contents">
-              {news.map(({ id, title, image }) => (
-                <>
-                  <Head><title>NEWS一覧| cuisine idee konkon 〜コンコンレシピ〜</title></Head>
-                  <ul key={id}>
-                    <Link href={`/news/${id}`}>
-                      <li>
-                          <div>
-                            {image ? (
-                                <img src={image.url + "?w=210&h=140"} alt="" />
-                            ) : (
-                                <div />
-                              )}
-                          </div>
-                          <div className="title"><a>{title}</a></div>
-                      </li>
-                    </Link>
-                  </ul>
-                </>
-              ))}
-            </div>
+}: {
+  news: {
+    id: number
+    title: string
+    image: any
+  }[]
+}) {
+  return (
+    <>
+      <Layout>
+        <div id="news">
+          <h2>NEWS一覧</h2>
+          <div className="contents">
+            {news.map(({ id, title, image }) => (
+              <>
+                <Head><title>NEWS一覧| cuisine idee konkon 〜コンコンレシピ〜</title></Head>
+                <ul key={id}>
+                  <Link href={`/news/${id}`}>
+                    <li>
+                      <div>
+                        {image ? (<img src={image.url + "?w=210&h=140"} alt="" />) : (<div />)}
+                      </div>
+                      <div className="title"><a>{title}</a></div>
+                    </li>
+                  </Link>
+                </ul>
+              </>
+            ))}
           </div>
-        </Layout>
-        <style jsx>{`
+        </div>
+      </Layout>
+      <style jsx>{`
           h2 {
             text-align: center;
             margin: 80px 0 20px 0;
@@ -73,15 +69,15 @@ export default function News({
               text-shadow: 2px 2px 2px #000;
           }
         `}</style>
-      </>
-      );
+    </>
+  );
 }
 
 
 // データをテンプレートに受け渡す部分の処理を記述
 export const getStaticProps: GetStaticProps = async () => {
   const key: any = {
-    headers: {'X-API-KEY': process.env.API_KEY},
+    headers: { 'X-API-KEY': process.env.API_KEY },
   };
   const data = await fetch('https://konkonrecipes.microcms.io/api/v1/news?limit=50', key)
     .then(res => res.json())

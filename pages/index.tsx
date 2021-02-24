@@ -5,123 +5,51 @@ import Main_V from "./parts/main_v";
 import NewMovie from './parts/new_movie';
 import CategorySort from './parts/category_sort';
 
-export default function Home({recipes}: {recipes: {
-      id: any
-      title: string
-      image: any
-      description: string
-      category: any
-    }[]}
-    ) {
+export default function Home({ recipes }: {
+  recipes: {
+    id: any
+    title: string
+    image: any
+    description: string
+    category: any
+    tags: any
+  }[]
+}
+) {
   return (
     <>
       <Layout>
-      <Main_V />
-      <NewMovie />
-      <CategorySort />
-      <div className="contents">
-        {recipes.map(({ id, title, image, description, category }) => (
-          <>
-            <ul key={id} className={`sort_${category.category} ${"content"}`}>
-              <Link href={`category/${category.category}`}><h4 className={`_${category.category}`}>{category.category}</h4></Link>
-              <Link href={`recipes/${id}`}>
+        <Main_V />
+        <NewMovie />
+        <CategorySort />
+        <div className="recipe_contents">
+          {recipes.map(({ id, title, image, description, category, tags }) => (
+            <>
+              <ul key={id} className={`sort_${category.category} ${"content"}`}>
+                <Link href={`category/${category.category}`}><h4 className={`_${category.category}`}>{category.category}</h4></Link>
+                <Link href={`recipes/${id}`}>
                   <li>
                     <div>
-                      {image ? (
-                        <img src={image.url} alt="" />
-                        ) : (
-                          <div />
-                          )}
+                      {image ? (<img src={image.url} alt="" />) : (<div />)}
                     </div>
-                    <h3>{title}</h3>
+                    <div className="tag_box">
+                      {tags[0] ? <Link href={`/tags/${tags[0].id}`}><h5>{tags[0].tag}</h5></Link> : ""}
+                      {tags[1] ? <Link href={`/tags/${tags[1].id}`}><h5>{tags[1].tag}</h5></Link> : ""}
+                      {tags[2] ? <Link href={`/tags/${tags[2].id}`}><h5>{tags[2].tag}</h5></Link> : ""}
+                      {tags[3] ? <Link href={`/tags/${tags[3].id}`}><h5>{tags[3].tag}</h5></Link> : ""}
+                      {tags[4] ? <Link href={`/tags/${tags[4].id}`}><h5>{tags[4].tag}</h5></Link> : ""}
+                    </div>
+                    <div className="text_box">
+                      <h3>{title}</h3>
                       <p>{description}</p>
+                    </div>
                   </li>
-              </Link>
-            </ul>
-          </>
-        ))}
-      </div>
+                </Link>
+              </ul>
+            </>
+          ))}
+        </div>
       </Layout>
-      <style jsx>{`
-          .contents {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 0 3vw;
-          }
-          ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0;
-            width: 45vw;
-            height: 220px;
-            border: solid 1px #c3c3c3;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 1px 1px 10px #afafaf;
-          }
-          h4 {
-            margin: 0;
-            border-radius: 0 10px 0 10px;
-            text-align: center;
-            color: #fff;
-            text-shadow: 1px 1px 1px #947d7d;
-            font-family: "apple Chancery", serif;
-            position: absolute;
-            transform: translate(18.2vw,-0.1vw);
-            width: 27vw;
-          }
-          h4:active {
-            background-color: #c3c3c3;
-          }
-          h4:hover{cursor: pointer;}
-          li {
-            height: 220px;
-            border-radius: 10px;
-          }
-          li:active {
-            background-color: #c3c3c3;
-          }
-          li:hover{cursor: pointer;}
-          img {
-            width: 45vw;
-            height: 28vw;
-            border-radius: 10px 10px 0 0;
-          }
-          h3 {
-            font-size: 0.9rem;
-            margin: 0;
-            text-align: center;
-          }
-          p {
-            font-size: 0.8rem;
-            padding: 0 1vw;
-            margin: 5px 0;
-            color: #666;
-          }
-          @media screen and (min-width:800px) {
-            .contents {
-              margin: 0 15vw;
-              justify-content: flex-start;
-            }
-            ul {
-              width: 15vw;
-              height: 250px;
-              margin: 10px 1vw 20px;
-            }
-            h4 {
-              width: 8vw;
-              transform: translate(7.05vw,-0.1vw);
-            }
-            li {
-              height: 250px;
-            }
-            img {
-              width: 15vw;
-              height: 10vw;
-            }
-          }
-          `}</style>
     </>
   );
 };
@@ -129,7 +57,7 @@ export default function Home({recipes}: {recipes: {
 // データをテンプレートに受け渡す部分の処理を記述
 export const getStaticProps: GetStaticProps = async () => {
   const key: any = {
-    headers: {'X-API-KEY': process.env.API_KEY},
+    headers: { 'X-API-KEY': process.env.API_KEY },
   };
   const data = await fetch('https://konkonrecipes.microcms.io/api/v1/recipes?limit=50', key)
     .then(res => res.json())

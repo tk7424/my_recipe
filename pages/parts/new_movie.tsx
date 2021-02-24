@@ -3,8 +3,8 @@ const NewMovie = () => {
         <>
             <div>
                 <iframe src="https://www.youtube.com/embed/?list=UUD9rstz787RQXIuk_rPtbJg&autoplay=1&mute=1&playsinline=1"></iframe>
+                <h2>〜 N e w   M o v i e 〜</h2>
             </div>
-            <h2>〜 N e w   M o v i e 〜</h2>
             <style jsx>{`
             div {
                 text-align: center;

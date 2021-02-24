@@ -1,6 +1,7 @@
 import Header from './header'
 import Footer from './footer'
 import Head from './head'
+import BottomNav from './menu/BottomNav'
 
 const Layout = (props: any) => (
   <>
@@ -8,6 +9,7 @@ const Layout = (props: any) => (
     <Header />
     {props.children}
     <Footer />
+    <BottomNav />
   </>
 )
 
