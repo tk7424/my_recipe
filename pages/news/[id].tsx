@@ -11,6 +11,7 @@ export default function News({
       title: string
       image: any
       content: any
+      HTML: any
     }[]
   }){
 
@@ -21,7 +22,7 @@ export default function News({
         <Layout>
           <>
             <div id="news">
-              {news.map(({ id, title, image, content }) => (
+              {news.map(({ id, title, image, content, HTML }) => (
                   <div style={{display: baseurl+id == url.asPath ? "" : "none"}}>
                     <div>
                         {image ? (<img src={image.url + "?w=210&h=140"} alt="" />) : (<div />)}
@@ -29,6 +30,7 @@ export default function News({
                     <h2>{title}</h2>
                     <div className="border"></div>
                     <div className="content" dangerouslySetInnerHTML={{__html: `${content}`,}} />
+                    <div className="ad_cont" dangerouslySetInnerHTML={{__html: `${HTML}`,}} />
                   </div>
               ))}
             </div>

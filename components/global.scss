@@ -226,6 +226,10 @@ Footer{
     p {
         font-size: 0.9rem;
         margin: 0 3vw;
+
+        img {
+            width: 94vw;
+        }
     }
     pre {
         background-color: #ffcf87;;
@@ -243,6 +247,23 @@ Footer{
     blockquote {
         margin: 10px 3vw;
     }
+    .ad_cont {
+        a{
+            width: 80vw;
+            padding: 10px 0;
+            margin: 20px 10vw 0;
+            text-align: center;
+            text-shadow: 1px 1px 1px #947d7d;
+            border-radius: 23px;
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            background-color: #ffbe69;
+            &:active {
+                background-color: #947d7d;
+            }
+        }
+      }
 }
 
 // カテゴリー色分け //
