@@ -228,8 +228,9 @@ Footer{
         margin: 0 3vw;
 
         img {
-            transform: translate(-3vw, -13px);
+            margin: 0 calc(50% - 50vw);
             width: 100vw;
+            transform: translateY(-13px);
         }
     }
     pre {
