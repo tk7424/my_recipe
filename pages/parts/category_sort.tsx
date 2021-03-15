@@ -74,7 +74,10 @@ const CategorySort = () => {
                 .categories div:hover{cursor: pointer;}
                 @media screen and (min-width:800px) {
                     .categories {
-                        margin: 30px 15vw;
+                        margin: 30px auto;
+                        min-width: 600px;
+                        width: 60vw;
+                        max-width: 800px;
                     }
                     .categories div {
                         font-size: 1rem;

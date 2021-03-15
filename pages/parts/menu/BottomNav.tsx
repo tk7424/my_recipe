@@ -49,6 +49,11 @@ const BottomNav = () => {
                 color: #ffae46;
                 font-size: 0.7rem;
             }
+            @media screen and (min-width:800px) {
+                .bottom_nav {
+                    display: none;
+                }
+            }
         `}</style>
         </>
     )

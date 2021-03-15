@@ -111,12 +111,19 @@ export default function RecipeId({
               padding: 40px 0 30px;
               font-size: 2rem;
             }
+            h5 {
+              width: 150px;
+              height: 27px;
+              padding: 5px 0 0 0;
+            }
             .flex {
               display: flex;
               margin: 30px 0 20px;
+              justify-content: center;
             }
             a {
-              margin: 20px 1vw 0;
+              margin: 20px 10px 0;
+              width: 350px;
             }
           }
           `}</style>

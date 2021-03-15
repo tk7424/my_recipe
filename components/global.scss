@@ -177,6 +177,10 @@ Footer{
         text-decoration: none;
         text-shadow: 1px 1px 1px #947d7d;
     }
+    @media screen and (min-width:$pc) {
+        height: 150px;
+        margin: 50px 0 0 0;
+    }
 }
 
 // singleページ //
@@ -211,12 +215,18 @@ Footer{
     @media screen and (min-width:$pc) {
         margin: 0 20vw;
         iframe {
-                width: 60vw;
-                height: 34vw;
+            width: 800px;
+            height: 450px;
+            margin: 0 calc((100vw - 800px - 40vw) / 2);
+        }
+        p {
+            font-size: 1rem;
+            margin: 0 calc((100vw - 800px - 40vw) / 2);
         }
         pre {
-            width: 50vw;
-            margin: 0 2vw;
+            width: 740px;
+            margin: 0 calc((100vw - 800px - 40vw) / 2);
+            padding: 30px;
         }
     }
 }
