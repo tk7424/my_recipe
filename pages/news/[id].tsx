@@ -1,7 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
 import AdSense from 'react-adsense';
 import Layout from '../parts/MyLayout';
+import Head from 'next/head';
+import { useRouter } from "next/router";
 
 export default function News({
   news
@@ -12,27 +13,32 @@ export default function News({
     image: any
     content: any
     HTML: any
-  }[]
+  }
 }) {
-
   const url: any = useRouter();
-  const baseurl = "/news/";
+  const art_url: any = url.asPath
   return (
     <>
       <Layout>
+      <Head>
+          <title>{news.title}| cuisine idee konkon 〜コンコンレシピ〜</title>
+          {/* <meta name="description" content={news.content} /> */}
+          <meta property="og:url" content={`https://cuisineidee.com${art_url}`} />
+          <meta property="og:title" content={news.title} />
+          {/* <meta property="og:description" content={news.description} /> */}
+          <meta property="og:image" content={news.image.url} />
+        </Head>
         <>
           <div id="news">
-            {news.map(({ id, title, image, content, HTML }) => (
-              <div style={{ display: baseurl + id == url.asPath ? "" : "none" }}>
-                <div>
-                  {image ? (<img src={image.url + "?w=210&h=140"} alt="" />) : (<div />)}
-                </div>
-                <h2>{title}</h2>
-                <div className="border"></div>
-                <div className="content" dangerouslySetInnerHTML={{ __html: `${content}`, }} />
-                {HTML ? (<div className="ad_cont" dangerouslySetInnerHTML={{ __html: `${HTML}`, }} />) : ("")}
+            <>
+              <div>
+                {news.image ? (<img src={news.image.url + "?w=210&h=140"} alt="" />) : (<div />)}
               </div>
-            ))}
+              <h2>{news.title}</h2>
+              <div className="border"></div>
+              <div className="content" dangerouslySetInnerHTML={{ __html: `${news.content}`, }} />
+              {news.HTML ? (<div className="ad_cont" dangerouslySetInnerHTML={{ __html: `${news.HTML}`, }} />) : ("")}
+            </>
           </div>
           <AdSense.Google
             client='ca-pub-7785406076713581'
@@ -65,16 +71,20 @@ export default function News({
 
 
 // データをテンプレートに受け渡す部分の処理を記述
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (context: any) => {
+  const id = context.params.id;
   const key: any = {
     headers: { 'X-API-KEY': process.env.API_KEY },
   };
-  const data = await fetch('https://konkonrecipes.microcms.io/api/v1/news?limit=50', key)
+  const data = await fetch(
+    'https://konkonrecipes.microcms.io/api/v1/news/' + id,
+    key,
+  )
     .then(res => res.json())
     .catch(() => null);
   return {
     props: {
-      news: data.contents,
+      news: data,
     },
   };
 };
