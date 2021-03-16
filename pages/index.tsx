@@ -17,40 +17,38 @@ export default function Home({ recipes }: {
 }
 ) {
   return (
-    <>
-      <Layout>
-        <Main_V />
-        <NewMovie />
-        <CategorySort />
-        <div className="recipe_contents">
-          {recipes.map(({ id, title, image, description, category, tags }) => (
-            <>
-              <ul key={id} className={`sort_${category.category} ${"content"}`}>
-                <Link href={`category/${category.category}`}><h4 className={`_${category.category}`}>{category.category}</h4></Link>
-                <Link href={`recipes/${id}`}>
-                  <li>
-                    <div>
-                      {image ? (<img src={image.url} alt="" />) : (<div />)}
-                    </div>
-                    <div className="tag_box">
-                      {tags[0] ? <Link href={`/tags/${tags[0].id}`}><h5>{tags[0].tag}</h5></Link> : ""}
-                      {tags[1] ? <Link href={`/tags/${tags[1].id}`}><h5>{tags[1].tag}</h5></Link> : ""}
-                      {tags[2] ? <Link href={`/tags/${tags[2].id}`}><h5>{tags[2].tag}</h5></Link> : ""}
-                      {tags[3] ? <Link href={`/tags/${tags[3].id}`}><h5>{tags[3].tag}</h5></Link> : ""}
-                      {tags[4] ? <Link href={`/tags/${tags[4].id}`}><h5>{tags[4].tag}</h5></Link> : ""}
-                    </div>
-                    <div className="text_box">
-                      <h3>{title}</h3>
-                      <p>{description}</p>
-                    </div>
-                  </li>
-                </Link>
-              </ul>
-            </>
-          ))}
-        </div>
-      </Layout>
-    </>
+    <Layout>
+      <Main_V />
+      <NewMovie />
+      <CategorySort />
+      <div className="recipe_contents">
+        {recipes.map(({ id, title, image, description, category, tags }) => (
+          <>
+            <ul key={id} className={`sort_${category.category} ${"content"}`}>
+              <Link href={`category/${category.category}`}><h4 className={`_${category.category}`}>{category.category}</h4></Link>
+              <Link href={`recipes/${id}`}>
+                <li>
+                  <div>
+                    {image ? (<img src={image.url} alt="" />) : (<div />)}
+                  </div>
+                  <div className="tag_box">
+                    {tags[0] ? <Link href={`/tags/${tags[0].id}`}><h5>{tags[0].tag}</h5></Link> : ""}
+                    {tags[1] ? <Link href={`/tags/${tags[1].id}`}><h5>{tags[1].tag}</h5></Link> : ""}
+                    {tags[2] ? <Link href={`/tags/${tags[2].id}`}><h5>{tags[2].tag}</h5></Link> : ""}
+                    {tags[3] ? <Link href={`/tags/${tags[3].id}`}><h5>{tags[3].tag}</h5></Link> : ""}
+                    {tags[4] ? <Link href={`/tags/${tags[4].id}`}><h5>{tags[4].tag}</h5></Link> : ""}
+                  </div>
+                  <div className="text_box">
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </div>
+                </li>
+              </Link>
+            </ul>
+          </>
+        ))}
+      </div>
+    </Layout>
   );
 };
 

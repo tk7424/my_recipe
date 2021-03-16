@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from "../../../components/Header/burger.module.scss";
 
 type Props = {
   open: boolean;
@@ -11,10 +12,10 @@ const Burger: React.FC<Props> = ({
 }) =>  {
   return (
     <>
-      <div className="burger_menu" aria-expanded={open} onClick={() => setOpen(!open)}>
+      <div className={styles.burger_menu} aria-expanded={open} onClick={() => setOpen(!open)}>
         <span />
       </div>
-      <div className="back_ground" aria-expanded={open} onClick={() => setOpen(!open)}></div>
+      <div className={styles.back_ground} aria-expanded={open} onClick={() => setOpen(!open)}></div>
     </>
   );
 };

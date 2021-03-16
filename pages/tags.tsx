@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import Layout from './parts/MyLayout';
 import AdSense from 'react-adsense';
+import styles from "../components/Index/tag.module.scss";
 
 export default function TagsIndex({ tags }: {
     tags: {
@@ -11,54 +12,26 @@ export default function TagsIndex({ tags }: {
 }
 ) {
     return (
-        <>
-            <Layout>
-                <AdSense.Google
-                    client='ca-pub-7785406076713581'
-                    slot=''
-                />
+        <Layout>
+            <AdSense.Google
+                client='ca-pub-7785406076713581'
+                slot=''
+            />
+            <div className={styles.tag_index}>
                 <h2>タグ一覧</h2>
-                <div className="tags">
+                <div className={styles.tags}>
                     {tags.map(({ id, tag }) => (
                         <>
                             <Link href={`/tags/${id}`}>
-                                <div className="tag">
+                                <div className={styles.tag}>
                                     <h3>{tag}</h3>
                                 </div>
                             </Link>
                         </>
                     ))}
                 </div>
-            </Layout>
-            <style jsx>{`
-            h2 {
-                text-align: center;
-                margin: 20px 0;
-                font-family: serif;
-                letter-spacing: 0.2rem;
-              }
-            .tags {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                text-align: center;
-            }
-            .tag {
-                width: 120px;
-            }
-            .tag h3 {
-                display: block;
-                background-color: #999;
-                border-radius: 10px;
-                margin: 10px 5px;
-                font-size: 1rem;
-                color: #fff;
-                font-weight: normal;
-            }
-            .tag h3:active {
-                background-color: #c3c3c3;}
-          `}</style>
-        </>
+            </div>
+        </Layout>
     )
 }
 

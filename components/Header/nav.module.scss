@@ -1,0 +1,63 @@
+@import "../variables.scss";
+
+.nav_menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+    background-color: #fffdf3;
+    height: 100vh;
+    padding: 100px 0 0 0;
+    width: 60vw;
+
+    &[aria-expanded="false"] {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        position: fixed;
+        top: 0;
+        right: -400px;
+        transition: all 0.3s;
+    }
+    &[aria-expanded="true"] {
+        right: 0;
+        transition: all 0.3s;
+        position: fixed;
+        z-index: 9;
+    }
+    h3 {
+        margin: 0 0 40px 40px;
+        font-size: 1rem;
+        color: #383838;
+        font-weight: normal;
+        border-bottom: solid 1px #383838;
+        &:active {
+            background-color: #c3c3c3;
+        }
+    }
+    h4 {
+        font-weight: normal;
+        font-size: 0.8rem;
+        color: #a0a0a0;
+        margin: 0 0 0 20px;
+    }
+    ul {
+        text-align: left;
+
+        li {
+            margin: 20px 0;
+            list-style: none;
+            border-bottom: solid 1px #383838;
+            &:active {
+                background-color: #c3c3c3;
+            }
+            a {
+                font-size: 1rem;
+                color: #383838;
+                text-decoration: none;
+            }
+        }
+    }
+    @include mq(md) {
+        display: none !important;
+    }
+}

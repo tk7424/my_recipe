@@ -1,3 +1,4 @@
+import styles from "../../components/Header/header.module.scss";
 import React, { useState } from 'react';
 import Link from "next/link";
 import Burger from "./menu/Burger";
@@ -6,7 +7,7 @@ import Nav from "./menu/Nav"
 const Header = () => {
   const [open, setOpen] = useState(false);
   return (
-    <header>
+    <header className={styles.header}>
       <Link href="/">
         <img src="/title_logo.png" alt="タイトルロゴ"/>
       </Link>

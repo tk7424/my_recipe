@@ -1,0 +1,19 @@
+@import "../variables.scss";
+
+.tag_single {
+    h2 {
+        text-align: center;
+        margin: 20px 0;
+        font-family: serif;
+        letter-spacing: 0.2rem;
+    }
+    h2:nth-of-type(n+2) {
+        display: none;
+    }
+    .cont_none {
+        display: none;
+    }
+    .cont_ok {
+        display: block;
+    }
+}

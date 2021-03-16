@@ -1,0 +1,32 @@
+@import "../variables.scss";
+
+.bottom_nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: #fff;
+    text-align: center;
+    border: solid 1px #e2e2e2;
+    >div {
+        width: calc(100vw/3);
+        &:active {
+            background-color: #ffdbae;
+        }
+        img {
+            height: 30px;
+            width: 30px;
+            margin: 5px 0 0;
+        }
+        nav {
+            color: #ffae46;
+            font-size: 0.7rem;
+        }
+    }
+}
+@include mq(md) {
+    .bottom_nav {
+        display: none;
+    }
+}

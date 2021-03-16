@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Layout from '../parts/MyLayout'
 import { useRouter } from 'next/router';
 import AdSense from 'react-adsense';
+import styles from "../../components/Detail/category.module.scss";
 
 export default function Home({
   recipes,
@@ -21,12 +22,12 @@ export default function Home({
   const baseurl = "/category/";
 
   return (
-    <>
-      <Layout>
-        <AdSense.Google
-          client='ca-pub-7785406076713581'
-          slot=''
-        />
+    <Layout>
+      <AdSense.Google
+        client='ca-pub-7785406076713581'
+        slot=''
+      />
+      <div className={styles.categories}>
         <h2>
           {url.asPath == (baseurl + "MAIN") ? "メイン料理" : ""}
           {url.asPath == (baseurl + "APPETIZER") ? "前菜" : ""}
@@ -61,16 +62,8 @@ export default function Home({
             </>
           ))}
         </div>
-      </Layout>
-      <style jsx>{`
-          h2 {
-            text-align: center;
-            margin: 20px 0;
-            font-family: serif;
-            letter-spacing: 0.2rem;
-          }
-          `}</style>
-    </>
+      </div>
+    </Layout>
   );
 };
 

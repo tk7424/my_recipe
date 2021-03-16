@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+.footer{
+    height: 40px;
+    background-color: #ffbe69;
+    margin: 50px 0 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px #947d7d;
+    }
+    @include mq(md) {
+        height: 150px;
+        margin: 50px 0 0 0;
+    }
+}

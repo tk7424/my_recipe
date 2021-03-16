@@ -4,6 +4,7 @@ import Layout from '../parts/MyLayout';
 import Link from 'next/link';
 import Head from 'next/head';
 import { useRouter } from "next/router";
+import styles from "../../components/Detail/recipe.module.scss";
 
 export default function RecipeId({
   recipes
@@ -21,7 +22,6 @@ export default function RecipeId({
   const url: any = useRouter();
   const art_url: any = url.asPath
   return (
-    <>
       <Layout>
         <Head>
           <title>【レシピ】{recipes.title}| cuisine idee konkon 〜コンコンレシピ〜</title>
@@ -31,9 +31,9 @@ export default function RecipeId({
           <meta property="og:description" content={recipes.description} />
           <meta property="og:image" content={recipes.image.url} />
         </Head>
-        <div id="single">
+        <div id="single" className={styles.recipe_single}>
           <h1>{recipes.title}</h1>
-          <div className="tag_box">
+          <div className={styles.tag_box}>
             {recipes.tags[0] ? <Link href={`/tags/${recipes.tags[0].id}`}><h5>{recipes.tags[0].tag}</h5></Link> : ""}
             {recipes.tags[1] ? <Link href={`/tags/${recipes.tags[1].id}`}><h5>{recipes.tags[1].tag}</h5></Link> : ""}
             {recipes.tags[2] ? <Link href={`/tags/${recipes.tags[2].id}`}><h5>{recipes.tags[2].tag}</h5></Link> : ""}
@@ -45,9 +45,9 @@ export default function RecipeId({
               __html: `${recipes.body}`,
             }}
           />
-          <div className="flex">
+          <div className={styles.flex}>
             <Link href="https://www.youtube.com/channel/UCD9rstz787RQXIuk_rPtbJg">
-              <a target="_blank" className="youtube_btn">チャンネル登録</a>
+              <a target="_blank" className={styles.youtube_btn}>チャンネル登録</a>
             </Link>
             <Link href={`/category/${recipes.category.category}`}>
               <a className={`_${recipes.category.category}`}>{recipes.category.category}一覧</a>
@@ -59,75 +59,6 @@ export default function RecipeId({
           />
         </div>
       </Layout>
-      <style jsx>{`
-          h1 {
-            font-size: 1.4rem;
-            padding: 10px 0;
-            margin: 0;
-            text-align: center;
-          }
-          .tag_box {
-            display: flex;
-            justify-content: center;
-            text-align: center;
-          }
-          h5 {
-            display: block;
-            width: 20vw;
-            background-color: #999;
-            border-radius: 15px;
-            margin: 0 3px 10px;
-            font-size: 0.9rem;
-            color: #fff;
-            font-weight: normal;
-          }
-          h5:active {background-color: #fff;}
-          div {
-            position: relative;
-            z-index: 0;
-          }
-          .flex {
-            margin: 0 0 20px;
-          }
-          a {
-            width: 80vw;
-            padding: 10px 0;
-            margin: 20px 10vw 0;
-            text-align: center;
-            text-shadow: 1px 1px 1px #947d7d;
-            border-radius: 23px;
-            display: inline-block;
-            color: #fff;
-            text-decoration: none;
-          }
-          a:active {
-            background-color: #c3c3c3;
-          }
-          .youtube_btn {
-            background-color: #ff6969;
-          }
-          @media screen and (min-width:800px) {
-            h1 {
-              padding: 40px 0 30px;
-              font-size: 2rem;
-            }
-            h5 {
-              width: 150px;
-              height: 27px;
-              padding: 5px 0 0 0;
-            }
-            .flex {
-              display: flex;
-              margin: 30px 0 20px;
-              justify-content: center;
-            }
-            a {
-              margin: 20px 10px 0;
-              width: 350px;
-            }
-          }
-          `}</style>
-    </>
   );
 }
 

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import AdSense from 'react-adsense';
 import Layout from '../parts/MyLayout';
+import styles from "../../components/Detail/tag.module.scss";
 
 export default function Tags({ recipes }: {
     recipes: {
@@ -18,12 +19,12 @@ export default function Tags({ recipes }: {
     const url: any = useRouter();
     const baseurl = "/tags/";
     return (
-        <>
-            <Layout>
-                <AdSense.Google
-                    client='ca-pub-7785406076713581'
-                    slot=''
-                />
+        <Layout>
+            <AdSense.Google
+                client='ca-pub-7785406076713581'
+                slot=''
+            />
+            <div className={styles.tag_single}>
                 {recipes.map(({ tags }) => (
                     <>
                         {tags[0] ? baseurl + tags[0].id == url.asPath ? <h2>{tags[0].tag}</h2> : "" : ""}
@@ -37,12 +38,12 @@ export default function Tags({ recipes }: {
                     {recipes.map(({ id, title, image, description, category, tags }) => (
                         <>
                             <ul key={id}
-                                className={`sort_${category.category} ${"content"} 
-                                    ${tags[0] ? baseurl + tags[0].id == url.asPath ? "cont_ok" : "cont_none" : ""} 
-                                    ${tags[1] ? baseurl + tags[1].id == url.asPath ? "cont_ok" : "cont_none" : ""} 
-                                    ${tags[2] ? baseurl + tags[2].id == url.asPath ? "cont_ok" : "cont_none" : ""} 
-                                    ${tags[3] ? baseurl + tags[3].id == url.asPath ? "cont_ok" : "cont_none" : ""} 
-                                    ${tags[4] ? baseurl + tags[4].id == url.asPath ? "cont_ok" : "cont_none" : ""} 
+                                className={`
+                                    ${tags[0] ? baseurl + tags[0].id == url.asPath ? `${styles.cont_ok}` : `${styles.cont_none}` : ""} 
+                                    ${tags[1] ? baseurl + tags[1].id == url.asPath ? `${styles.cont_ok}` : `${styles.cont_none}` : ""} 
+                                    ${tags[2] ? baseurl + tags[2].id == url.asPath ? `${styles.cont_ok}` : `${styles.cont_none}` : ""} 
+                                    ${tags[3] ? baseurl + tags[3].id == url.asPath ? `${styles.cont_ok}` : `${styles.cont_none}` : ""} 
+                                    ${tags[4] ? baseurl + tags[4].id == url.asPath ? `${styles.cont_ok}` : `${styles.cont_none}` : ""} 
                                 `}
                             >
                                 <Link href={`/category/${category.category}`}><h4 className={`_${category.category}`}>{category.category}</h4></Link>
@@ -68,25 +69,8 @@ export default function Tags({ recipes }: {
                         </>
                     ))}
                 </div>
-            </Layout>
-            <style jsx>{`
-            h2 {
-                text-align: center;
-                margin: 20px 0;
-                font-family: serif;
-                letter-spacing: 0.2rem;
-            }
-            h2:nth-of-type(n+2) {
-                display: none;
-            }
-            .cont_none {
-                display: none;
-            }
-            .cont_ok {
-                display: block;
-            }
-            `}</style>
-        </>
+            </div>
+        </Layout>
     );
 };
 

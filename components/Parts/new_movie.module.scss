@@ -1,0 +1,26 @@
+@import "../variables.scss";
+
+.new_movie {
+    text-align: center;
+    margin: 20px 0 0 0;
+    iframe {
+        width: 80vw;
+        height: 45vw;
+        border: solid 5px #cacaca;
+    }
+    h2 {
+        font-family: "apple Chancery", serif;
+        text-shadow: 0 0 0 #000;
+        text-align: center;
+        margin: 0;
+    }
+    @include mq(md) {
+        iframe {
+            width: 32vw;
+            height: 18vw;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+    }
+}
