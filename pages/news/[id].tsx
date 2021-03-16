@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import AdSense from 'react-adsense';
 import Layout from '../parts/MyLayout';
 import Head from 'next/head';
 import { useRouter } from "next/router";
@@ -25,17 +26,23 @@ export default function News({
         <meta property="og:title" content={news.title} />
         <meta property="og:image" content={news.image.url} />
       </Head>
-      <div id="news" className={styles.news}>
-        <>
-          <div>
-            {news.image ? (<img className={styles.news_img} src={news.image.url + "?w=210&h=140"} alt="" />) : (<div />)}
-          </div>
-          <h2>{news.title}</h2>
-          <div className={styles.border}></div>
-          <div dangerouslySetInnerHTML={{ __html: `${news.content}`, }} />
-          {news.HTML ? (<div className={styles.ad_cont} dangerouslySetInnerHTML={{ __html: `${news.HTML}`, }} />) : ("")}
-        </>
-      </div>
+      <>
+        <div id="news" className={styles.news}>
+          <>
+            <div>
+              {news.image ? (<img className={styles.news_img} src={news.image.url + "?w=210&h=140"} alt="" />) : (<div />)}
+            </div>
+            <h2>{news.title}</h2>
+            <div className={styles.border}></div>
+            <div dangerouslySetInnerHTML={{ __html: `${news.content}`, }} />
+            {news.HTML ? (<div className={styles.ad_cont} dangerouslySetInnerHTML={{ __html: `${news.HTML}`, }} />) : ("")}
+          </>
+        </div>
+        <AdSense.Google
+          client='ca-pub-7785406076713581'
+          slot=''
+        />
+      </>
     </Layout>
   );
 }
