@@ -11,7 +11,7 @@ const Header = () => {
     <header className={styles.header}>
       <Link href="/">
           <img
-            src="/title_logo.png"
+            src="/title_logo.jpeg"
             alt="タイトルロゴ"
             width="200"
             height="60"
