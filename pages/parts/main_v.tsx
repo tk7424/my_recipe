@@ -7,7 +7,7 @@ const Main_V = () => {
             <Image
                 src="/main_v.png"
                 className={styles.main_v}
-                alt="コンコンレシピ_メインビジュアル"
+                alt="コンコンレシピ・メインビジュアル"
                 layout="fill"
             />
             <div>
