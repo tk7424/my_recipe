@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link"
 import styles from "../../../components/Footer/nav.module.scss";
 
@@ -7,7 +7,7 @@ const BottomNav = () => {
         <div className={styles.bottom_nav}>
             <Link href="/">
                 <div>
-                    <Image
+                    <img
                         src="/recipe_icon.png"
                         alt="レシピアイコン"
                         width="20"
@@ -18,7 +18,7 @@ const BottomNav = () => {
             </Link>
             <Link href="/news">
                 <div>
-                    <Image
+                    <img
                         src="/news_icon.png"
                         alt="ニュースアイコン"
                         width="20"
@@ -29,7 +29,7 @@ const BottomNav = () => {
             </Link>
             <Link href="/tags">
                 <div>
-                    <Image
+                    <img
                         src="/tag_icon.png"
                         alt="タグアイコン"
                         width="20"

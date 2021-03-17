@@ -1,14 +1,14 @@
 import styles from "../../components/Parts/main_v.module.scss";
-import Image from 'next/image'
+// import Image from 'next/image'
 
 const Main_V = () => {
     return (
         <div className={styles.main_v_box}>
-            <Image
+            <img
                 src="/main_v.png"
                 className={styles.main_v}
                 alt="コンコンレシピ・メインビジュアル"
-                layout="fill"
+                // layout="fill"
             />
             <div>
                 <h1>コンコンレシピ</h1>

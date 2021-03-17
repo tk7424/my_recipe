@@ -1,5 +1,5 @@
 import styles from "../../components/Header/header.module.scss";
-import Image from 'next/image'
+// import Image from 'next/image'
 import React, { useState } from 'react';
 import Link from "next/link";
 import Burger from "./menu/Burger";
@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Link href="/">
-          <Image
+          <img
             src="/title_logo.png"
             alt="タイトルロゴ"
             width="200"
