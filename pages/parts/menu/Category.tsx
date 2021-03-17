@@ -10,11 +10,11 @@ const Category: React.FC<Props> = ({
 }) => {
 return (
         <>
-          <Link href="/category/APPETIZER"><li aria-expanded={open} onClick={() => setOpen(!open)}><a>前菜</a></li></Link>
-          <Link href="/category/MAIN"><li aria-expanded={open} onClick={() => setOpen(!open)}><a>メイン料理</a></li></Link>
-          <Link href="/category/DESERT"><li aria-expanded={open} onClick={() => setOpen(!open)}><a>デザート</a></li></Link>
-          <Link href="/category/1DISH"><li aria-expanded={open} onClick={() => setOpen(!open)}><a>1品料理</a></li></Link>
-          <Link href="/category/ALONEFOOD"><li aria-expanded={open} onClick={() => setOpen(!open)}><a>一人暮らし飯</a></li></Link>
+          <Link href="/category/APPETIZER"><li aria-expanded={open} onClick={() => setOpen(!open)}><h3>前菜</h3></li></Link>
+          <Link href="/category/MAIN"><li aria-expanded={open} onClick={() => setOpen(!open)}><h3>メイン料理</h3></li></Link>
+          <Link href="/category/DESERT"><li aria-expanded={open} onClick={() => setOpen(!open)}><h3>デザート</h3></li></Link>
+          <Link href="/category/1DISH"><li aria-expanded={open} onClick={() => setOpen(!open)}><h3>1品料理</h3></li></Link>
+          <Link href="/category/ALONEFOOD"><li aria-expanded={open} onClick={() => setOpen(!open)}><h3>一人暮らし飯</h3></li></Link>
         </>
 )}
 

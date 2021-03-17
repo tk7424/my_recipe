@@ -60,6 +60,9 @@
             content: " ";
         }
     }
+    @include mq(md) {
+        display: none;
+    }
 }
 .back_ground {
     &[aria-expanded="true"] {
