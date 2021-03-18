@@ -24,10 +24,12 @@
             margin: 0 calc(50% - 50vw);
             width: 100vw;
             transform: translateY(-13px);
+            height: 220px;
+            object-fit: cover;
         }
     }
     pre {
-        background-color: #ffcf87;;
+        background-color: #ffbb63;;
         text-align: center;
 
         code {
@@ -53,7 +55,7 @@
             display: inline-block;
             color: #fff;
             text-decoration: none;
-            background-color: #ffbe69;
+            background-color: #ffae46;
             &:active {
                 background-color: #947d7d;
             }
