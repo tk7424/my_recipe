@@ -1,6 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
-import Layout from '../parts/MyLayout'
 import { useRouter } from 'next/router';
 import AdSense from 'react-adsense';
 import styles from "../../components/Detail/category.module.scss";
@@ -22,7 +21,7 @@ export default function Home({
   const baseurl = "/category/";
 
   return (
-    <Layout>
+    <>
       <AdSense.Google
         client='ca-pub-7785406076713581'
         slot=''
@@ -63,7 +62,7 @@ export default function Home({
           ))}
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

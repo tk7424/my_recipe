@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import Layout from './parts/MyLayout'
 import * as gtag from '../lib/gtag'
 import '../components/global.scss';
 
@@ -7,14 +8,16 @@ export default function App({ Component, pageProps }: any) {
     const router = useRouter()
     useEffect(() => {
         const handleRouteChange = (url: string) => {
-        gtag.pageview(url)
+            gtag.pageview(url)
         }
         router.events.on('routeChangeComplete', handleRouteChange)
         return () => {
-        router.events.off('routeChangeComplete', handleRouteChange)
+            router.events.off('routeChangeComplete', handleRouteChange)
         }
     }, [router.events])
     return (
-        <Component {...pageProps} />
+        <Layout>
+            <Component {...pageProps} />
+        </Layout>
     )
-  }
+}

@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import AdSense from 'react-adsense';
-import Layout from '../parts/MyLayout';
 import styles from "../../components/Detail/tag.module.scss";
 
 export default function Tags({ recipes }: {
@@ -19,7 +18,7 @@ export default function Tags({ recipes }: {
     const url: any = useRouter();
     const baseurl = "/tags/";
     return (
-        <Layout>
+        <>
             <AdSense.Google
                 client='ca-pub-7785406076713581'
                 slot=''
@@ -70,7 +69,7 @@ export default function Tags({ recipes }: {
                     ))}
                 </div>
             </div>
-        </Layout>
+        </>
     );
 };
 

@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import Layout from './parts/MyLayout'
 import Main_V from "./parts/main_v";
 import NewMovie from './parts/new_movie';
 import CategorySort from './parts/category_sort';
@@ -17,7 +16,7 @@ export default function Home({ recipes }: {
 }
 ) {
   return (
-    <Layout>
+    <>
       <Main_V />
       <NewMovie />
       <CategorySort />
@@ -48,7 +47,7 @@ export default function Home({ recipes }: {
           </>
         ))}
       </div>
-    </Layout>
+    </>
   );
 };
 

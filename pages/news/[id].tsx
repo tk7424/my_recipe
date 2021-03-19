@@ -1,6 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import AdSense from 'react-adsense';
-import Layout from '../parts/MyLayout';
 import Head from 'next/head';
 import { useRouter } from "next/router";
 import styles from "../../components/Detail/news.module.scss";
@@ -19,7 +18,7 @@ export default function News({
   const url: any = useRouter();
   const art_url: any = url.asPath
   return (
-    <Layout>
+    <>
       <Head>
         <title>{news.title}| cuisine idee konkon 〜コンコンレシピ〜</title>
         <meta property="og:url" content={`https://cuisineidee.com${art_url}`} />
@@ -43,7 +42,7 @@ export default function News({
           slot=''
         />
       </>
-    </Layout>
+    </>
   );
 }
 

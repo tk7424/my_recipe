@@ -1,6 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import AdSense from 'react-adsense';
-import Layout from '../parts/MyLayout';
 import Link from 'next/link';
 import Head from 'next/head';
 import { useRouter } from "next/router";
@@ -22,7 +21,7 @@ export default function RecipeId({
   const url: any = useRouter();
   const art_url: any = url.asPath
   return (
-      <Layout>
+      <>
         <Head>
           <title>【レシピ】{recipes.title}| cuisine idee konkon 〜コンコンレシピ〜</title>
           <meta name="description" content={recipes.description} />
@@ -58,7 +57,7 @@ export default function RecipeId({
             slot=''
           />
         </div>
-      </Layout>
+      </>
   );
 }
 

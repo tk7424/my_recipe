@@ -16,6 +16,8 @@
         height: 50px;
     }
     img {
+        width: 60vw;
+        height: 60px;
         &:hover{cursor: pointer;}
     }
     @include mq(md) {

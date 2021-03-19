@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link'
-import Layout from './parts/MyLayout';
 import Head from 'next/head';
 import styles from "../components/Index/news.module.scss";
 
@@ -14,7 +13,6 @@ export default function NewsIndex({
   }[]
 }) {
   return (
-    <Layout>
       <div className={styles.news_index}>
         <h2>NEWS一覧</h2>
         <div className={styles.contents}>
@@ -35,7 +33,6 @@ export default function NewsIndex({
           ))}
         </div>
       </div>
-    </Layout>
   );
 }
 

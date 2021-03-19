@@ -13,8 +13,8 @@ const Header = () => {
           <img
             src="/title_logo.jpeg"
             alt="タイトルロゴ"
-            width="200"
-            height="60"
+            // width="200"
+            // height="60"
           />
       </Link>
       <Burger open={open} setOpen={setOpen} />

@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import Layout from './parts/MyLayout';
 import AdSense from 'react-adsense';
 import styles from "../components/Index/tag.module.scss";
 
@@ -12,7 +11,7 @@ export default function TagsIndex({ tags }: {
 }
 ) {
     return (
-        <Layout>
+        <>
             <AdSense.Google
                 client='ca-pub-7785406076713581'
                 slot=''
@@ -31,7 +30,7 @@ export default function TagsIndex({ tags }: {
                     ))}
                 </div>
             </div>
-        </Layout>
+        </>
     )
 }
 
