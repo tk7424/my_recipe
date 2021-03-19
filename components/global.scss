@@ -68,6 +68,7 @@ body{
         position: absolute;
         transform: translate(18.2vw,-0.1vw);
         width: 27vw;
+        height: 25px;
         &:active {background-color: #c3c3c3;}
         &:hover{cursor: pointer;}
       }
@@ -92,6 +93,7 @@ body{
               background-color: #999;
               border-radius: 15px;
               margin: 5px 3px;
+              padding: 2px;
               font-size: 0.7rem;
               color: #fff;
               font-weight: normal;

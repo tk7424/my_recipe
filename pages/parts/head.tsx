@@ -11,6 +11,7 @@ const head = () => {
             <meta property="og:url" content="https://cuisineidee.com/" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@konkon7424" />
+            <meta name='viewport' content='initial-scale=1, viewport-fit=cover' />
 
             <script
                 async

@@ -5,10 +5,12 @@
     position: fixed;
     bottom: 0;
     width: 100vw;
-    height: 60px;
+    height: 50px;
     background-color: #fff;
     text-align: center;
     border: solid 1px #e2e2e2;
+    padding-bottom: env(safe-area-inset-bottom);
+    
     >div {
         width: calc(100vw/3);
         padding: 2px 0;
@@ -18,11 +20,16 @@
         img {
             height: 30px;
             width: 30px;
-            margin: 5px 0 0;
         }
         nav {
             color: #ffae46;
             font-size: 0.7rem;
+        }
+        &:nth-of-type(n+2) {
+            img{
+                height: 25px;
+                padding: 5px 0 0 0;
+            }
         }
     }
 }
