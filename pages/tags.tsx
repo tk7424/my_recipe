@@ -13,14 +13,16 @@ export default function TagsIndex({ tags }: {
 ) {
     return (
         <>
-            <AdSense.Google
-                client='ca-pub-7785406076713581'
-                slot=''
-            />
+            <div className="ad_top">
+                <AdSense.Google
+                    client='ca-pub-7785406076713581'
+                    slot=''
+                />
+            </div>
             <div className={styles.tag_index}>
-                <h2>タグ一覧</h2>
                 <div id="pc_body">
                     <div className="pc_body_left">
+                        <h2>タグ一覧</h2>
                         <div className={styles.tags}>
                             {tags.map(({ id, tag }) => (
                                 <>

@@ -23,20 +23,22 @@ export default function Home({
 
   return (
     <>
-      <AdSense.Google
-        client='ca-pub-7785406076713581'
-        slot=''
-      />
+      <div className="ad_top">
+        <AdSense.Google
+          client='ca-pub-7785406076713581'
+          slot=''
+        />
+      </div>
       <div className={styles.categories}>
-        <h2>
-          {url.asPath == (baseurl + "MAIN") ? "メイン料理" : ""}
-          {url.asPath == (baseurl + "APPETIZER") ? "前菜" : ""}
-          {url.asPath == (baseurl + "1DISH") ? "1品料理" : ""}
-          {url.asPath == (baseurl + "DESERT") ? "デザート" : ""}
-          {url.asPath == (baseurl + "ALONEFOOD") ? "一人暮らし飯" : ""}
-        </h2>
         <div id="pc_body">
           <div className="pc_body_left">
+            <h2>
+              {url.asPath == (baseurl + "MAIN") ? "メイン料理" : ""}
+              {url.asPath == (baseurl + "APPETIZER") ? "前菜" : ""}
+              {url.asPath == (baseurl + "1DISH") ? "1品料理" : ""}
+              {url.asPath == (baseurl + "DESERT") ? "デザート" : ""}
+              {url.asPath == (baseurl + "ALONEFOOD") ? "一人暮らし飯" : ""}
+            </h2>
             <div className="recipe_contents">
               {recipes.map(({ id, title, image, description, category, tags }) => (
                 <>

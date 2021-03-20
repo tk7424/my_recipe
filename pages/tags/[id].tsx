@@ -20,22 +20,24 @@ export default function Tags({ recipes }: {
     const baseurl = "/tags/";
     return (
         <>
-            <AdSense.Google
-                client='ca-pub-7785406076713581'
-                slot=''
-            />
+            <div className="ad_top">
+                <AdSense.Google
+                    client='ca-pub-7785406076713581'
+                    slot=''
+                />
+            </div>
             <div className={styles.tag_single}>
-                {recipes.map(({ tags }) => (
-                    <>
-                        {tags[0] ? baseurl + tags[0].id == url.asPath ? <h2>{tags[0].tag}</h2> : "" : ""}
-                        {tags[1] ? baseurl + tags[1].id == url.asPath ? <h2>{tags[1].tag}</h2> : "" : ""}
-                        {tags[2] ? baseurl + tags[2].id == url.asPath ? <h2>{tags[2].tag}</h2> : "" : ""}
-                        {tags[3] ? baseurl + tags[3].id == url.asPath ? <h2>{tags[3].tag}</h2> : "" : ""}
-                        {tags[4] ? baseurl + tags[4].id == url.asPath ? <h2>{tags[4].tag}</h2> : "" : ""}
-                    </>
-                ))}
                 <div id="pc_body">
                     <div className="pc_body_left">
+                        {recipes.map(({ tags }) => (
+                            <>
+                                {tags[0] ? baseurl + tags[0].id == url.asPath ? <h2>{tags[0].tag}</h2> : "" : ""}
+                                {tags[1] ? baseurl + tags[1].id == url.asPath ? <h2>{tags[1].tag}</h2> : "" : ""}
+                                {tags[2] ? baseurl + tags[2].id == url.asPath ? <h2>{tags[2].tag}</h2> : "" : ""}
+                                {tags[3] ? baseurl + tags[3].id == url.asPath ? <h2>{tags[3].tag}</h2> : "" : ""}
+                                {tags[4] ? baseurl + tags[4].id == url.asPath ? <h2>{tags[4].tag}</h2> : "" : ""}
+                            </>
+                        ))}
                         <div className="recipe_contents">
                             {recipes.map(({ id, title, image, description, category, tags }) => (
                                 <>
