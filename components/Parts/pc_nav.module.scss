@@ -4,7 +4,7 @@
     display: none;
     @include mq(md) {
         display: block;
-        margin: 50px 0;
+        margin: 50px 0 0;
         padding: 30px 0;
         background-color: #fff;
         border: solid 1px #f1f1f1;
@@ -43,4 +43,7 @@
             }
         }
     }
+}
+.ad_box {
+    margin: 20px 0 0 0;
 }

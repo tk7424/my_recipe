@@ -1,5 +1,4 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import AdSense from 'react-adsense';
 import Head from 'next/head';
 import { useRouter } from "next/router";
 import styles from "../../components/Detail/news.module.scss";
@@ -45,10 +44,6 @@ export default function News({
             <PcNav />
           </div>
         </div>
-        <AdSense.Google
-          client='ca-pub-7785406076713581'
-          slot=''
-        />
       </>
     </>
   );

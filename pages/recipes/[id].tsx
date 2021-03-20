@@ -1,5 +1,4 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import AdSense from 'react-adsense';
 import Link from 'next/link';
 import Head from 'next/head';
 import { useRouter } from "next/router";
@@ -55,10 +54,6 @@ export default function RecipeId({
                 <a className={`_${recipes.category.category}`}>{recipes.category.category}一覧</a>
               </Link>
             </div>
-            <AdSense.Google
-              client='ca-pub-7785406076713581'
-              slot=''
-            />
           </div>
         </div>
         <div className="pc_body_right">
