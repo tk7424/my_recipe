@@ -1,9 +1,24 @@
 @import "./variables.scss";
 
+// 全ページ共通 //
 body{
     margin: 60px auto 0;
     background-color: #fffdf3;
     font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+}
+@include mq(md) {
+  #pc_body {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+
+    .pc_body_left {
+      width: 950px;
+    }
+    .pc_body_right {
+      width: 250px;
+    }
+  }
 }
 
 // カテゴリー色分け //
@@ -30,10 +45,7 @@ body{
 }
 @include mq(md) {
     .categories {
-        margin: 30px auto;
-        min-width: 600px;
-        width: 60vw;
-        max-width: 800px;
+        margin: 30px 40px;
         div {
             font-size: 1rem;
         }
@@ -122,24 +134,33 @@ body{
   }
   @include mq(md) {
     .recipe_contents {
-      margin: 0 15vw;
+      margin: 0 30px;
       justify-content: flex-start;
 
       ul {
-        width: 15vw;
-        height: 250px;
-        margin: 10px 1vw 20px;
+        width: 200px;
+        height: 280px;
+        margin: 10px 10px 20px;
 
         h4 {
-          width: 8vw;
-          transform: translate(7.05vw,-0.1vw);
+          width: 130px;
+          transform: translate(70.5px, -0.5px);
         }
         li {
           height: 250px;
 
           img {
-            width: 15vw;
-            height: 10vw;
+            width: 200px;
+            height: 130px;
+          }
+          .tag_box {
+            margin: 3px 0;
+            h5 {
+              max-width: 100px;
+            }
+          }
+          .text_box {
+            height: 110px;
           }
         }
       }

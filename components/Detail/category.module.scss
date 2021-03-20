@@ -7,4 +7,9 @@
         font-family: serif;
         letter-spacing: 0.2rem;
       }
+      @include mq(md) {
+        h2 {
+          font-size: 2rem;
+        }
+      }
 }

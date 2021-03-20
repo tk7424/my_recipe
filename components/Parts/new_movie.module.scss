@@ -16,8 +16,8 @@
     }
     @include mq(md) {
         iframe {
-            width: 32vw;
-            height: 18vw;
+            width: 500px;
+            height: 300px;
         }
         h2 {
             font-size: 2rem;

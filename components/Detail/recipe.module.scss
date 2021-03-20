@@ -32,6 +32,7 @@
     margin: 0 0 20px;
     }
     a {
+        font-size: 1rem;
         width: 80vw;
         padding: 10px 0;
         margin: 20px 10vw 0;
@@ -77,15 +78,17 @@
     }
 
     @include mq(md) {
-        margin: 0 20vw;
         h1 {
             padding: 40px 0 30px;
             font-size: 2rem;
         }
-        h5 {
-            width: 150px;
-            height: 27px;
-            padding: 5px 0 0 0;
+        .tag_box{
+            h5 {
+                width: 150px;
+                height: 27px;
+                padding: 5px 0 0 0;
+                &:hover{cursor: pointer;}
+            }
         }
         .flex {
             display: flex;
@@ -99,16 +102,20 @@
         iframe {
             width: 800px;
             height: 450px;
-            margin: 0 calc((100vw - 800px - 40vw) / 2);
+            margin: 0 75px;
+        }
+        pre {
+            width: 750px;
+            margin: 0 70px;
+            padding: 30px;
+
+            code {
+                font-size: 1rem;
+            }
         }
         p {
             font-size: 1rem;
-            margin: 0 calc((100vw - 800px - 40vw) / 2);
-        }
-        pre {
-            width: 740px;
-            margin: 0 calc((100vw - 800px - 40vw) / 2);
-            padding: 30px;
+            margin: 0 75px;
         }
     }
 }

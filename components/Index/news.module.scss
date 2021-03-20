@@ -11,6 +11,7 @@
         ul {
             margin: 0;
             padding: 0;
+            list-style: none;
             li {
                 background-color: #000;
                 img {
@@ -33,6 +34,43 @@
                     a {
                         color: #fff;
                         text-shadow: 1px 1px 1px #000;
+                    }
+                }
+            }
+        }
+    }
+    @include mq(md) {
+        h2 {
+            font-size: 2rem;
+            margin: 120px 0 50px;
+        }
+        .contents {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            ul {
+                li {
+                    background-color: #fffdf3;
+                    width: 250px;
+                    height: 250px;
+                    margin: 0 20px;
+                    img {
+                        width: 250px;
+                        height: 130px;
+                        position: static;
+                        &:hover{cursor: pointer;}
+                    }
+                    .title {
+                        position: static;
+                        height: auto;
+                        padding: 5px 0 0 0;
+                        display: block;
+                        text-align: left;
+                        a {
+                            color: #000;
+                            text-shadow: none;
+                            &:hover{cursor: pointer;}
+                        }
                     }
                 }
             }

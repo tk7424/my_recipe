@@ -16,4 +16,9 @@
     .cont_ok {
         display: block;
     }
+    @include mq(md) {
+        h2 {
+            font-size: 2rem;
+        }
+    }
 }

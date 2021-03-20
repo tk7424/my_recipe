@@ -60,5 +60,47 @@
                 background-color: #947d7d;
             }
         }
-      }
+    }
+    @include mq(md) {
+        margin: 80px 100px 20px;
+        padding: 0 0 50px;
+        width: 700px;
+        background-color: #fff;
+        .news_img {
+            width: 450px;
+            margin: 0 125px;
+        }
+        .border {
+            margin: 0 40px 20px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            margin: 10px 20px;
+            text-align: center;
+        }
+        p {
+            font-size: 1rem;
+            margin: 10px 40px 0;
+            img {
+                width: 400px;
+                margin: 10px 100px;
+                transform: translate(0);
+            }
+        }
+        pre {
+            margin: 20px 0 0;
+            code {
+                font-size: 1.3rem;
+            }
+        }
+        blockquote {
+            font-size: 1.1rem;
+        }
+        .ad_cont {
+            a {
+                width: 400px;
+                margin: 50px 150px;
+            }
+        }
+    }
 }

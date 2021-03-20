@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import AdSense from 'react-adsense';
 import styles from "../../components/Detail/category.module.scss";
+import PcNav from '../parts/menu/PcNav';
 
 export default function Home({
   recipes,
@@ -34,32 +35,39 @@ export default function Home({
           {url.asPath == (baseurl + "DESERT") ? "デザート" : ""}
           {url.asPath == (baseurl + "ALONEFOOD") ? "一人暮らし飯" : ""}
         </h2>
-        <div className="recipe_contents">
-          {recipes.map(({ id, title, image, description, category, tags }) => (
-            <>
-              <ul key={id} style={{ display: baseurl + category.category == url.asPath ? "" : "none" }}>
-                <Link href={`/category/${category.category}`}><h4 className={`_${category.category}`}>{category.category}</h4></Link>
-                <Link href={`/recipes/${id}`}>
-                  <li>
-                    <div >
-                      {image ? (<img src={image.url} alt="" />) : (<div />)}
-                    </div>
-                    <div className="tag_box">
-                      {tags[0] ? <Link href={`/tags/${tags[0].id}`}><h5>{tags[0].tag}</h5></Link> : ""}
-                      {tags[1] ? <Link href={`/tags/${tags[1].id}`}><h5>{tags[1].tag}</h5></Link> : ""}
-                      {tags[2] ? <Link href={`/tags/${tags[2].id}`}><h5>{tags[2].tag}</h5></Link> : ""}
-                      {tags[3] ? <Link href={`/tags/${tags[3].id}`}><h5>{tags[3].tag}</h5></Link> : ""}
-                      {tags[4] ? <Link href={`/tags/${tags[4].id}`}><h5>{tags[4].tag}</h5></Link> : ""}
-                    </div>
-                    <div className="text_box">
-                      <h3>{title}</h3>
-                      <p>{description}</p>
-                    </div>
-                  </li>
-                </Link>
-              </ul>
-            </>
-          ))}
+        <div id="pc_body">
+          <div className="pc_body_left">
+            <div className="recipe_contents">
+              {recipes.map(({ id, title, image, description, category, tags }) => (
+                <>
+                  <ul key={id} style={{ display: baseurl + category.category == url.asPath ? "" : "none" }}>
+                    <Link href={`/category/${category.category}`}><h4 className={`_${category.category}`}>{category.category}</h4></Link>
+                    <Link href={`/recipes/${id}`}>
+                      <li>
+                        <div >
+                          {image ? (<img src={image.url} alt="" />) : (<div />)}
+                        </div>
+                        <div className="tag_box">
+                          {tags[0] ? <Link href={`/tags/${tags[0].id}`}><h5>{tags[0].tag}</h5></Link> : ""}
+                          {tags[1] ? <Link href={`/tags/${tags[1].id}`}><h5>{tags[1].tag}</h5></Link> : ""}
+                          {tags[2] ? <Link href={`/tags/${tags[2].id}`}><h5>{tags[2].tag}</h5></Link> : ""}
+                          {tags[3] ? <Link href={`/tags/${tags[3].id}`}><h5>{tags[3].tag}</h5></Link> : ""}
+                          {tags[4] ? <Link href={`/tags/${tags[4].id}`}><h5>{tags[4].tag}</h5></Link> : ""}
+                        </div>
+                        <div className="text_box">
+                          <h3>{title}</h3>
+                          <p>{description}</p>
+                        </div>
+                      </li>
+                    </Link>
+                  </ul>
+                </>
+              ))}
+            </div>
+          </div>
+          <div className="pc_body_right">
+            <PcNav />
+          </div>
         </div>
       </div>
     </>

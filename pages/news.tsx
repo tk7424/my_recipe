@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link'
 import Head from 'next/head';
 import styles from "../components/Index/news.module.scss";
+import PcNav from './parts/menu/PcNav';
 
 export default function NewsIndex({
   news
@@ -13,26 +14,33 @@ export default function NewsIndex({
   }[]
 }) {
   return (
-      <div className={styles.news_index}>
-        <h2>NEWS一覧</h2>
-        <div className={styles.contents}>
-          {news.map(({ id, title, image }) => (
-            <>
-              <Head><title>NEWS一覧| cuisine idee konkon 〜コンコンレシピ〜</title></Head>
-              <ul key={id}>
-                <Link href={`/news/${id}`}>
-                  <li>
-                    <div>
-                      {image ? (<img src={image.url + "?w=210&h=140"} alt="" />) : (<div />)}
-                    </div>
-                    <div className={styles.title}><a>{title}</a></div>
-                  </li>
-                </Link>
-              </ul>
-            </>
-          ))}
+    <div className={styles.news_index}>
+      <h2>NEWS一覧</h2>
+      <div id="pc_body">
+        <div className="pc_body_left">
+          <div className={styles.contents}>
+            {news.map(({ id, title, image }) => (
+              <>
+                <Head><title>NEWS一覧| cuisine idee konkon 〜コンコンレシピ〜</title></Head>
+                <ul key={id}>
+                  <Link href={`/news/${id}`}>
+                    <li>
+                      <div>
+                        {image ? (<img src={image.url + "?w=210&h=140"} alt="" />) : (<div />)}
+                      </div>
+                      <div className={styles.title}><a>{title}</a></div>
+                    </li>
+                  </Link>
+                </ul>
+              </>
+            ))}
+          </div>
+        </div>
+        <div className="pc_body_right">
+              <PcNav />
         </div>
       </div>
+    </div>
   );
 }
 
