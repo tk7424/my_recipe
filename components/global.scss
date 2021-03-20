@@ -166,6 +166,9 @@ body{
           }
           .text_box {
             height: 110px;
+            p {
+              padding: 0 10px;
+            }
           }
         }
       }
