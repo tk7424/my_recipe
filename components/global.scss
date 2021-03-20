@@ -5,23 +5,25 @@ body{
     margin: 60px auto 0;
     background-color: #fffdf3;
     font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-}
-@include mq(md) {
-  #pc_body {
-    display: flex;
-    width: 1200px;
-    margin: 0 auto;
-
-    .pc_body_left {
-      width: 950px;
+    
+    @include mq(md) {
+      margin: 80px auto 0;
+      #pc_body {
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+    
+        .pc_body_left {
+          width: 950px;
+        }
+        .pc_body_right {
+          width: 250px;
+        }
+      }
+      .ad_top {
+        text-align: center;
+      }
     }
-    .pc_body_right {
-      width: 250px;
-    }
-  }
-  .ad_top {
-    text-align: center;
-  }
 }
 
 // カテゴリー色分け //

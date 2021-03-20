@@ -40,9 +40,10 @@
         }
     }
     @include mq(md) {
+        margin: 160px 0 0 0;
         h2 {
             font-size: 2rem;
-            margin: 120px 0 50px;
+            margin: 0 0 50px;
         }
         .contents {
             display: flex;

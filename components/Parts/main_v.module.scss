@@ -28,13 +28,13 @@
     }
     @include mq(md) {
         .main_v {
-        height: 250px;
+        height: 230px;
         }
         div {
-            height: 250px;
+            height: 230px;
             h1 {
                 font-size: 4rem;
-                padding: 150px 5vw 0 0;
+                padding: 130px 100px 0 0;
             }
         }
     }

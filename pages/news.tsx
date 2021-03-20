@@ -15,9 +15,9 @@ export default function NewsIndex({
 }) {
   return (
     <div className={styles.news_index}>
-      <h2>NEWS一覧</h2>
       <div id="pc_body">
         <div className="pc_body_left">
+          <h2>NEWS一覧</h2>
           <div className={styles.contents}>
             {news.map(({ id, title, image }) => (
               <>
@@ -37,7 +37,7 @@ export default function NewsIndex({
           </div>
         </div>
         <div className="pc_body_right">
-              <PcNav />
+          <PcNav />
         </div>
       </div>
     </div>
