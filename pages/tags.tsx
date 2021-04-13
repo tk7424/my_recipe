@@ -50,7 +50,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const key: any = {
         headers: { 'X-API-KEY': process.env.API_KEY },
     };
-    const data = await fetch('https://konkonrecipes.microcms.io/api/v1/tags?limit=50', key)
+    const data = await fetch('https://konkonrecipes.microcms.io/api/v1/tags?limit=1000', key)
         .then(res => res.json())
         .catch(() => null);
 

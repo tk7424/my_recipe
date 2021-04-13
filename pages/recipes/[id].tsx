@@ -23,7 +23,7 @@ export default function RecipeId({
   return (
     <>
       <Head>
-        <title>【レシピ】{recipes.title}| cuisine idee konkon 〜コンコンレシピ〜</title>
+        <title>【レシピ】{recipes.title}の作り方| コンコンキッチン</title>
         <meta name="description" content={recipes.description} />
         <meta property="og:url" content={`https://cuisineidee.com${art_url}`} />
         <meta property="og:title" content={recipes.title} />
@@ -87,7 +87,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const key: any = {
     headers: { 'X-API-KEY': process.env.API_KEY },
   };
-  const data = await fetch('https://konkonrecipes.microcms.io/api/v1/recipes?limit=50', key)
+  const data = await fetch('https://konkonrecipes.microcms.io/api/v1/recipes?limit=1000', key)
     .then(res => res.json())
     .catch(() => null);
   const paths = data.contents.map((content: any) => `/recipes/${content.id}`);

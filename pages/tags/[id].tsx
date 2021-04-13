@@ -89,7 +89,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const key: any = {
         headers: { 'X-API-KEY': process.env.API_KEY },
     };
-    const data = await fetch('https://konkonrecipes.microcms.io/api/v1/recipes?limit=50', key)
+    const data = await fetch('https://konkonrecipes.microcms.io/api/v1/recipes?limit=1000', key)
         .then(res => res.json())
         .catch(() => null);
     return {
@@ -103,7 +103,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const key: any = {
         headers: { 'X-API-KEY': process.env.API_KEY },
     };
-    const data = await fetch('https://konkonrecipes.microcms.io/api/v1/tags?limit=50', key)
+    const data = await fetch('https://konkonrecipes.microcms.io/api/v1/tags?limit=1000', key)
         .then(res => res.json())
         .catch(() => null);
     const paths = data.contents.map((content: any) => `/tags/${content.id}`);

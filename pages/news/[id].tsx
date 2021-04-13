@@ -20,7 +20,7 @@ export default function News({
   return (
     <>
       <Head>
-        <title>{news.title}| cuisine idee konkon 〜コンコンレシピ〜</title>
+        <title>{news.title}| コンコンキッチン</title>
         <meta property="og:url" content={`https://cuisineidee.com${art_url}`} />
         <meta property="og:title" content={news.title} />
         <meta property="og:image" content={news.image.url} />
@@ -73,7 +73,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const key: any = {
     headers: { 'X-API-KEY': process.env.API_KEY },
   };
-  const data = await fetch('https://konkonrecipes.microcms.io/api/v1/news?limit=50', key)
+  const data = await fetch('https://konkonrecipes.microcms.io/api/v1/news?limit=1000', key)
     .then(res => res.json())
     .catch(() => null);
   const paths = data.contents.map((content: any) => `/news/${content.id}`);

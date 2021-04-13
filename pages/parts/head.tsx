@@ -6,8 +6,8 @@ const head = () => {
         <Head>
             
             <link rel="icon" href="/konkon.ico" type="image/png" />
-            <title>cuisine idee konkon 〜コンコンレシピ〜</title>
-            <meta name="description" content="youtubeチャンネル「コンコン」のレシピを掲載！料理に関する役立つ知識やアイデアもお伝えしています。" />
+            <title>コンコンキッチン</title>
+            <meta name="description" content="youtubeチャンネル「コンコンキッチン」のレシピを掲載！料理に関する役立つ知識やアイデアもお伝えしています。" />
             <meta property="og:url" content="https://cuisineidee.com/" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@konkon7424" />
