@@ -25,6 +25,7 @@ export default function RecipeId({
       <Head>
         <title>【レシピ】{recipes.title}の作り方| コンコンキッチン</title>
         <meta name="description" content={recipes.description} />
+        <meta name="thumbnail" content={recipes.image.url} />
         <meta property="og:url" content={`https://cuisineidee.com${art_url}`} />
         <meta property="og:title" content={recipes.title} />
         <meta property="og:description" content={recipes.description} />
