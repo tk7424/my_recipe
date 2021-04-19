@@ -10,12 +10,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <Link href="/">
-          <img
-            src="/title_logo.jpeg"
-            alt="タイトルロゴ"
-            // width="200"
-            // height="60"
-          />
+        <img src="/title_logo.png" alt="タイトルロゴ" />
       </Link>
       <Burger open={open} setOpen={setOpen} />
       <Nav open={open} setOpen={setOpen} />
