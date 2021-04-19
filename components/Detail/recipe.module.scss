@@ -78,6 +78,7 @@
     }
     blockquote {
         display: flex;
+        justify-content: space-between;
         padding: 10px 0 0;
         margin: 0 2vw;
         font-size: 0.9rem;
@@ -105,6 +106,7 @@
         img {
             width: 130px;
             height: 100px;
+            object-fit: cover;
         }
     }
 
@@ -145,7 +147,6 @@
             }
         }
         blockquote {
-            justify-content: space-between;
             margin: 0 75px;
 
             &:nth-of-type(1) {
