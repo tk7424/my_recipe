@@ -23,7 +23,7 @@ export default function RecipeId({
   return (
     <>
       <Head>
-        <title>【レシピ】{recipes.title}の作り方| コンコンキッチン</title>
+        <title>【レシピ】{recipes.title}のレシピ動画・作り方 | コンコンキッチン</title>
         <meta name="description" content={recipes.description} />
         <meta name="thumbnail" content={recipes.image.url} />
         <meta property="og:url" content={`https://cuisineidee.com${art_url}`} />
@@ -48,7 +48,7 @@ export default function RecipeId({
               }}
             />
             <div className={styles.flex}>
-              <Link href="https://www.youtube.com/channel/UCD9rstz787RQXIuk_rPtbJg">
+              <Link href="https://www.youtube.com/channel/UCD9rstz787RQXIuk_rPtbJg?sub_confirmation=1">
                 <a target="_blank" className={styles.youtube_btn}>チャンネル登録</a>
               </Link>
               <Link href={`/category/${recipes.category.category}`}>
