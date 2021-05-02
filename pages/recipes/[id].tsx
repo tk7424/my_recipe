@@ -24,11 +24,11 @@ export default function RecipeId({
     <>
       <Head>
         <title>【レシピ】{recipes.title}のレシピ動画・作り方 | コンコンキッチン</title>
-        <meta name="description" content={recipes.description} />
+        <meta name="description" content={`${recipes.description}youtubeチャンネル「コンコンキッチン」のレシピ動画の作り方を掲載！料理やデザートの作り方のコツを動画や写真と一緒に分かりやすく解説しています。`} />
         <meta name="thumbnail" content={recipes.image.url} />
         <meta property="og:url" content={`https://cuisineidee.com${art_url}`} />
         <meta property="og:title" content={recipes.title} />
-        <meta property="og:description" content={recipes.description} />
+        <meta property="og:description" content={`${recipes.description}youtubeチャンネル「コンコンキッチン」のレシピ動画の作り方を掲載！料理やデザートの作り方のコツを動画や写真と一緒に分かりやすく解説しています。`} />
         <meta property="og:image" content={recipes.image.url} />
       </Head>
       <div id="pc_body">
@@ -42,6 +42,7 @@ export default function RecipeId({
               {recipes.tags[3] ? <Link href={`/tags/${recipes.tags[3].id}`}><h5>{recipes.tags[3].tag}</h5></Link> : ""}
               {recipes.tags[4] ? <Link href={`/tags/${recipes.tags[4].id}`}><h5>{recipes.tags[4].tag}</h5></Link> : ""}
             </div>
+            <img className={styles.recipe_thumbnail} src={recipes.image.url} alt="レシピ画像"/>
             <div
               dangerouslySetInnerHTML={{
                 __html: `${recipes.body}`,

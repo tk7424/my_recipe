@@ -1,6 +1,11 @@
 @import "../variables.scss";
 
 .recipe_single {
+    .recipe_thumbnail {
+        position: absolute;
+        width: 100vw;
+        height: 56.3vw; 
+    }
     h1 {
         font-size: 1.4rem;
         padding: 10px 0;
@@ -111,6 +116,11 @@
     }
 
     @include mq(md) {
+        .recipe_thumbnail {
+            width: 800px;
+            height: 450px;
+            margin: 0 75px;
+        }
         h1 {
             padding: 40px 0 30px;
             font-size: 2rem;
