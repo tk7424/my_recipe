@@ -19,5 +19,5 @@
     "target": "esnext"
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "pages/parts/new_movie.jsx"]
+  "include": ["**/*.ts", "**/*.tsx", "pages/parts/new_movie.jsx", "next-sitemap.js"]
 }
